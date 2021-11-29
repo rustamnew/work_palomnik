@@ -395,7 +395,7 @@ if(CModule::IncludeModule('iblock')) {
             <?if($isMainPage):?>
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:news.list", 
-                    "slider_mainpage", 
+                    "slider-mainpage", 
                     array(
                         "ACTIVE_DATE_FORMAT" => "d.m.Y",
                         "ADD_SECTIONS_CHAIN" => "N",

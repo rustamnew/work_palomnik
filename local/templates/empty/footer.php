@@ -231,10 +231,10 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 </div>
             </footer>
             
-            <!-- :: Button Dark Mode -->
+            <!-- :: Button Dark Mode 
             <div class="dark-mode-decision">
                 <i class="fas fa-moon"></i>
-            </div>
+            </div>-->
 
             <!-- :: Scroll UP -->
             <div class="scroll-up">

@@ -3253,6 +3253,7 @@ header.navs.active{
 }
 
 /* :: Dark Mode */
+/*
 .dark-mode-decision{
     position: fixed;
     z-index: 100;
@@ -3460,7 +3461,7 @@ body.active-dark-mode-decision,
     color: #FFF;
 }
 
-
+*/
 
 
 
@@ -3789,6 +3790,13 @@ a:not([href]):not([class]):hover {
     color: #ffffff;
 }
 */
+
+.widget .widget-title a {
+    color: #262B3E;
+}
+.widget .widget-title a:hover {
+    color: #C89D66;
+}
 .blog-item .img-box ul li:hover a:not([href]):not([class]) {
     color: #ffffff;
 }
