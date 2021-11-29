@@ -1,6 +1,5 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("image", SITE_TEMPLATE_PATH."/assets/images/header/07_header.jpg");
 $APPLICATION->SetTitle("Результаты поиска");
 ?>
 <?$APPLICATION->IncludeComponent(
@@ -30,17 +29,21 @@ $APPLICATION->SetTitle("Результаты поиска");
 		"USE_LANGUAGE_GUESS" => "Y",
 		"USE_SUGGEST" => "N",
 		"USE_TITLE_RANK" => "Y",
-		"arrFILTER" => array(
-			0 => "iblock_catalog",
-			1 => "iblock_content",
-		),
-		"arrWHERE" => array(
-		),
 		"COMPONENT_TEMPLATE" => "search-page",
-		"arrFILTER_iblock_content" => array(
-			0 => "all",
+		"arrFILTER" => array(
+			0 => "iblock_content",
 		),
-		"SEARCH_FAIL" => "По вашему запросу ничего не найдено"
+		"arrFILTER_iblock_content" => array(
+			0 => "1",
+			1 => "2",
+			2 => "3",
+			3 => "4",
+			4 => "5",
+			5 => "6",
+			6 => "7",
+			7 => "8",
+		),
+		"SEARCH_FAIL" => "По вашему запросу ничего не найдено",
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

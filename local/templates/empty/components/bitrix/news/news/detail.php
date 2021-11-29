@@ -29,6 +29,10 @@ $this->setFrameMode(true);
 						"CHECK_DATES" => "N",
 						"FILTER_NAME" => "",
 						"arrFILTER" => array(
+							0 => "iblock_content",
+						),
+						"arrFILTER_iblock_content" => array(
+							0 => "8",
 						),
 						"CACHE_TYPE" => "A",
 						"CACHE_TIME" => "3600",
@@ -59,7 +63,7 @@ $this->setFrameMode(true);
 						"SORT_ORDER2" => "ASC",
 						"FILTER_NAME" => "",
 						"FIELD_CODE" => array(
-							0 => "",
+							0 => "DATE_CREATE",
 							1 => "",
 						),
 						"PROPERTY_CODE" => array(

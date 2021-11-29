@@ -32,7 +32,7 @@ $this->setFrameMode(true);
 	?>
 <?endif;?>
 
-<div class="row">
+<div class="row news-detail">
 	<div class="col-md-12">
 		<div class="blog-item">
 			<div class="img-box">

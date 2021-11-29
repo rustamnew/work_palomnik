@@ -30,6 +30,10 @@ $this->setFrameMode(true);
 						"CHECK_DATES" => "N",
 						"FILTER_NAME" => "",
 						"arrFILTER" => array(
+							0 => "iblock_content",
+						),
+						"arrFILTER_iblock_content" => array(
+							0 => "8",
 						),
 						"CACHE_TYPE" => "A",
 						"CACHE_TIME" => "3600",

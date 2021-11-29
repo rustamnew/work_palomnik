@@ -54,6 +54,8 @@ $this->setFrameMode(true);
                     <?endif;?>
 				<p><?=$arItem["PREVIEW_TEXT"]?></p>
 			</div>
+
+            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
 		</li>
 	<?endforeach;?>	
 </ul>

@@ -23,7 +23,7 @@
 		<?foreach($arResult["SEARCH"] as $arItem):?>
 			<div class="services-section-item">
 				<div class="item-content">
-					<h5><a href="<?=SITE_DIR.$arItem["URL"];?>"><?=$arItem["TITLE_FORMATED"];?></a></h5>
+					<h5><a href="<?=$arItem["URL"];?>"><?=$arItem["TITLE_FORMATED"];?></a></h5>
 					<p><?=$arItem["BODY_FORMATED"];?></p>
 				</div>
 			</div>
