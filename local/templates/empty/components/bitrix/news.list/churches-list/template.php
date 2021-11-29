@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<div class="row">
+<div class="row elemlist">
 	<?foreach($arResult["ITEMS"] as $arItem):?>
 		<?
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -22,9 +22,9 @@ $this->setFrameMode(true);
 
 		<div class="col-md-6" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<div class="blog-item">
-				<div class="img-box">
+				<div class="img-box" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)">
 					<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="open-post">
-						<img class="img-fluid" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="01 Blog">
+						
 					</a>
 
 					<?

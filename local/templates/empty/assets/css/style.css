@@ -50,6 +50,17 @@ h6 {
     margin: 0;
     padding: 0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Alice';
+}
+
+
+
 p {
     color: #9B9B9B;
     font-size: 14px;
@@ -433,7 +444,7 @@ header.navs.active{
 
 
 .nav-bar .logo .logo-nav img{
-    width: 130px;
+    width: 170px;
 }
 
 .nav-bar .logo .logo-nav img.two,
@@ -916,8 +927,7 @@ header.navs.active{
 }
 .header .banner .handline{
     color: #FFF;
-    
-    font-weight: 700;
+    //font-weight: 700;
     line-height: 1.2;
     font-size: 60px;
     margin-bottom: 30px;
@@ -2359,7 +2369,9 @@ header.navs.active{
 
 /* :: Footer */
 .footer{
-    background-color: #262B3E;
+    //background-color: #262B3E;
+    background-color: #912d33;
+    
     padding-top: 100px;
 }
 .footer .logo,
@@ -2469,7 +2481,8 @@ header.navs.active{
 .copyright{
     margin-top: 70px;
     padding: 10px 0;
-    background-color: #313851;
+    //background-color: #313851;
+    background-color: #6e2327;
     overflow: hidden
 }
 .copyright p{
@@ -2548,11 +2561,9 @@ header.navs.active{
 }
 .breadcrumb-header .banner h1{
     font-size: 60px;
-    font-weight: 600;
+    //font-weight: 600;
     line-height: 1.2;
     color: #FFF;
-    margin-bottom: 0;
-    
     margin-bottom: 25px;
 }
 .breadcrumb-header .banner ul li{

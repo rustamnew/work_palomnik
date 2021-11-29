@@ -25,10 +25,21 @@ $this->setFrameMode(true);
 								<div class="col-lg-10 offset-lg-1">
 									<div class="box-hero">
 										<div class="banner banner-3 text-center">
-											<div class="headline-top"><?=$arItem["NAME"]?></div>
-											<h1 class="handline"><?=$arItem["PREVIEW_TEXT"]?></h1>
-											<p class="about-website"><?=$arItem["DETAIL_TEXT"]?></p>
-											<a class="btn-1 btn-2 move-section" href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+											<?if($arItem["PROPERTIES"]["subtitle"]["VALUE"]):?>
+												<div class="headline-top"><?=$arItem["PROPERTIES"]["subtitle"]["VALUE"]["TEXT"];?></div>
+											<?endif;?>
+											
+											<?if($arItem["PREVIEW_TEXT"]):?>
+												<h1 class="handline"><?=$arItem["PREVIEW_TEXT"]?></h1>
+											<?endif;?>
+
+											<?if($arItem["DETAIL_TEXT"]):?>
+												<p class="about-website"><?=$arItem["DETAIL_TEXT"]?></p>
+											<?endif;?>
+
+											<?if($arItem["PROPERTIES"]["text"]["VALUE"]):?>
+												<a class="btn-1 btn-2 move-section" href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+											<?endif;?>
 										</div>
 									</div>
 								</div>
@@ -43,10 +54,21 @@ $this->setFrameMode(true);
                         <div class="container">
                             <div class="box-hero d-flex align-items-center justify-content-between">
                                 <div class="banner">
-									<div class="headline-top"><?=$arItem["NAME"]?></div>
-									<h1 class="handline"><?=$arItem["PREVIEW_TEXT"]?></h1>
-									<p class="about-website"><?=$arItem["DETAIL_TEXT"]?></p>
-									<a class="btn-1 btn-2 move-section" href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+									<?if($arItem["PROPERTIES"]["subtitle"]["VALUE"]):?>
+										<div class="headline-top"><?=$arItem["PROPERTIES"]["subtitle"]["VALUE"]["TEXT"];?></div>
+									<?endif;?>
+
+									<?if($arItem["PREVIEW_TEXT"]):?>
+										<h1 class="handline"><?=$arItem["PREVIEW_TEXT"]?></h1>
+									<?endif;?>
+
+									<?if($arItem["DETAIL_TEXT"]):?>
+										<p class="about-website"><?=$arItem["DETAIL_TEXT"]?></p>
+									<?endif;?>
+									
+									<?if($arItem["PROPERTIES"]["text"]["VALUE"]):?>
+										<a class="btn-1 btn-2 move-section" href="<?=$arItem["PROPERTIES"]["url"]["VALUE"];?>"><?=$arItem["PROPERTIES"]["text"]["VALUE"];?></a>
+									<?endif;?>
                                 </div>
                                 <?if($arItem["PROPERTIES"]["teasers_show"]["VALUE"]):?>
 									<div class="services-header text-right">
@@ -174,5 +196,6 @@ $this->setFrameMode(true);
 		<?endforeach;?>	
 	</div>
 </header>
+
 
 

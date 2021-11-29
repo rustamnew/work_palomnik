@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 				<div class="news-img" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)"></div>
 				<div class="item-content">
 					<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="title-blog">
-						<h5><?=$arItem["NAME"]?></h5>
+						<h6><?=$arItem["NAME"]?></h6>
 					</a>
 
 					<span><a href="#"><?echo FormatDateFromDB($arItem["DATE_CREATE"], 'SHORT');?></a></span>

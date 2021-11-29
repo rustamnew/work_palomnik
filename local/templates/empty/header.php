@@ -54,6 +54,9 @@ if(CModule::IncludeModule('iblock')) {
         <!-- :: Animate CSS -->
         <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/animate.css');?>
 
+        <!-- FONTS -->
+        <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/fonts.css');?>
+
         <!-- :: Style CSS -->
         <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/style.css');?>
 
@@ -64,6 +67,8 @@ if(CModule::IncludeModule('iblock')) {
         <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. "/assets/css/jquery.fancybox-1.3.4.css");?>
         <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/fancybox.css');?>
 
+        <!-- TESTING -->
+        <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH. '/assets/css/test.css');?>
 
         <!--[if lt IE 9]>
                 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

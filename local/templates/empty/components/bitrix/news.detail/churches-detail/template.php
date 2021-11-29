@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<div class="row">
+<div class="row elemdetail">
 	<div class="col-md-12">
 		<div class="blog-item">
 			<div class="img-box">
