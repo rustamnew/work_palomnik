@@ -4472,3 +4472,61 @@ section.provide .img-box .statistic-item-icon img{
 .pagination.pagination-sm .page-link:hover:focus {
     color: #FFF;
 }
+
+
+
+
+
+
+/**/
+.widget .news-box .item-content > a > h6 {
+    color: #9B9B9B;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+
+.widget .news-box .item-content > a:hover h6 {
+    color: #C89D66;
+}
+
+.elemlist .blog-item .img-box {
+    height: 250px;
+    width: 350px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.elemlist .blog-item .img-box a.open-post {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.elemdetail .blog-item .img-box {
+    display: flex;
+    justify-content: center;
+}
+
+.smaller-list ul,
+.smaller-detail .text-box > ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.smaller-list ul li,
+.smaller-detail .text-box > ul li {
+    padding: 2px 15px;
+    background-color: #C89D66;
+    border-radius: 3px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}
+.smaller-list ul li a,
+.smaller-detail .text-box > ul li a {
+    color: #fff;     
+    width: fit-content;
+}

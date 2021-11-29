@@ -12,36 +12,37 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
 <section class="bolg py-100">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-4">		
-				<?$APPLICATION->IncludeComponent(
-					"bitrix:search.tags.cloud", 
-					"news-tags", 
-					array(
-						"COMPONENT_TEMPLATE" => "news-tags",
-						"SORT" => "NAME",
-						"PAGE_ELEMENTS" => "10",
-						"PERIOD" => "",
-						"URL_SEARCH" => "/search/index.php",
-						"TAGS_INHERIT" => "Y",
-						"CHECK_DATES" => "N",
-						"FILTER_NAME" => "",
-						"arrFILTER" => array(
+			<div class="col-lg-4">
+				<?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "sidebar-section-list", Array(
+					"ADD_SECTIONS_CHAIN" => "Y",	
+						"CACHE_FILTER" => "N",	
+						"CACHE_GROUPS" => "Y",	
+						"CACHE_TIME" => "36000000",	
+						"CACHE_TYPE" => "A",	
+						"COUNT_ELEMENTS" => "N",	
+						"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	
+						"FILTER_NAME" => "sectionsFilter",	
+						"IBLOCK_ID" => "1",	
+						"IBLOCK_TYPE" => "content",	
+						"SECTION_CODE" => "",	
+						"SECTION_FIELDS" => array(	
+							0 => "",
+							1 => "",
 						),
-						"CACHE_TYPE" => "A",
-						"CACHE_TIME" => "3600",
-						"FONT_MAX" => "50",
-						"FONT_MIN" => "10",
-						"COLOR_NEW" => "3E74E6",
-						"COLOR_OLD" => "C0C0C0",
-						"PERIOD_NEW_TAGS" => "",
-						"SHOW_CHAIN" => "Y",
-						"COLOR_TYPE" => "Y",
-						"WIDTH" => "100%",
-						"TITLE" => "Теги"
+						"SECTION_ID" => $_REQUEST["SECTION_ID"],	
+						"SECTION_URL" => "",	
+						"SECTION_USER_FIELDS" => array(	
+							0 => "",
+							1 => "",
+						),
+						"SHOW_PARENT_NAME" => "N",	
+						"TOP_DEPTH" => "2",	
+						"VIEW_MODE" => "LINE",	
+						"TITLE" => "Благочиния",
+						"LINK" => "/"
 					),
 					false
 				);?>
@@ -104,7 +105,7 @@ $this->setFrameMode(true);
 						"PAGER_BASE_LINK_ENABLE" => "N",
 						"SET_STATUS_404" => "N",
 						"SHOW_404" => "N",
-						"MESSAGE_404" => "",
+						"MESSAGE_404" => ""
 					),
 					false
 				);?>
@@ -113,7 +114,7 @@ $this->setFrameMode(true);
 			<div class="col-lg-8">
 				<?$APPLICATION->IncludeComponent(
 					"bitrix:news.list",
-					"news-list",
+					"smaller-list",
 					Array(
 						"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 						"IBLOCK_ID" => $arParams["IBLOCK_ID"],
