@@ -57,13 +57,50 @@ $this->setFrameMode(true);
 				<?if($arResult["PROPERTIES"]["phone"]["VALUE"]):?>
 					<br>
 					<h5><?=$arResult["PROPERTIES"]["phone"]["NAME"];?></h5>
-					<p><?=$arResult["PROPERTIES"]["phone"]["VALUE"];?></p>
+					<p><a href="tel:<?=$arResult["PROPERTIES"]["phone"]["VALUE"];?>"><?=$arResult["PROPERTIES"]["phone"]["VALUE"];?></a></p>
 				<?endif;?>
 
 				<?if($arResult["PROPERTIES"]["site"]["VALUE"]):?>
 					<br>
 					<h5><?=$arResult["PROPERTIES"]["site"]["NAME"];?></h5>
-					<p><?=$arResult["PROPERTIES"]["site"]["VALUE"];?></p>
+					<p><a href="<?=$arResult["PROPERTIES"]["site"]["VALUE"];?>"><?=$arResult["PROPERTIES"]["site"]["VALUE"];?></a></p>
+				<?endif;?>
+
+				<?if($arResult["PROPERTIES"]["coords"]["VALUE"]):?>
+					<br>
+					<h5>Карта</h5>
+					<?
+					$coords = $arResult["PROPERTIES"]["coords"]["VALUE"];
+					$coords_array = explode(', ', $coords);
+					$coords1 = $coords_array[0];
+					$coords2 = $coords_array[1];
+					?>
+
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:map.yandex.view", 
+						".default", 
+						array(
+							"API_KEY" => "",
+							"CONTROLS" => array(
+								0 => "ZOOM",
+								1 => "MINIMAP",
+								2 => "TYPECONTROL",
+								3 => "SCALELINE",
+							),
+							"INIT_MAP_TYPE" => "MAP",
+							"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:$coords1;s:10:\"yandex_lon\";d:$coords2;s:12:\"yandex_scale\";i:15;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:$coords2;s:3:\"LAT\";d:$coords1;s:4:\"TEXT\";s:0:\"\";}}}",
+							"MAP_HEIGHT" => "500",
+							"MAP_ID" => "",
+							"MAP_WIDTH" => "100%",
+							"OPTIONS" => array(
+								0 => "ENABLE_SCROLL_ZOOM",
+								1 => "ENABLE_DBLCLICK_ZOOM",
+								2 => "ENABLE_DRAGGING",
+							),
+							"COMPONENT_TEMPLATE" => ".default"
+						),
+						false
+					);?>
 				<?endif;?>
 			</div>
 		</div>

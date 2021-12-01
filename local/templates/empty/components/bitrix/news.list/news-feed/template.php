@@ -69,9 +69,9 @@ $this->setFrameMode(true);
 				<?endif;?>
 				
 					<div class="blog-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-						<div class="img-box">
+						<div class="img-box" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)">
 							<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="open-post">
-								<img class="img-fluid" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="01 Blog">
+							
 							</a>
 
 							<?if($arItem["TAGS"]):?>

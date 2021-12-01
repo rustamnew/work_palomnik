@@ -4491,13 +4491,7 @@ section.provide .img-box .statistic-item-icon img{
     color: #C89D66;
 }
 
-.elemlist .blog-item .img-box {
-    height: 250px;
-    width: 350px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
+
 
 .elemlist .blog-item .img-box a.open-post {
     position: absolute;
@@ -4529,4 +4523,21 @@ section.provide .img-box .statistic-item-icon img{
 .smaller-detail .text-box > ul li a {
     color: #fff;     
     width: fit-content;
+}
+.smaller-list .services-section-item {
+    flex-direction: column;
+}
+.smaller-list .services-section-item .smaller-list_button-detail {
+    align-self: flex-end;
+    color: #C89D66; 
+}
+
+.smaller-list .services-section-item .smaller-list_button-detail:hover {
+    text-decoration: underline;
+}
+
+.news-detail .blog-item .text-box li {
+    color: #9B9B9B;
+    list-style: disc;
+    margin-left: 18px;
 }
