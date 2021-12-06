@@ -14,6 +14,8 @@ ul {
     margin: 0;
     list-style: none;
 }
+
+/*
 ::-moz-selection {
     background-color: #C89D66;
     color: #FFF;
@@ -24,6 +26,7 @@ ul {
     color: #FFF;
     text-shadow: none;
 }
+*/
 a,
 a:hover,
 a:focus,
@@ -4175,7 +4178,7 @@ section.provide .img-box .statistic-item-icon img{
     width: 55%;
     float: left;
     display: inline-block;
-    padding: 75px 80px 70px;
+    padding: 60px;
     background-image: url(../image/contact/contact2.png);
     background-repeat: no-repeat;
     background-position: top right;
@@ -4248,7 +4251,7 @@ section.provide .img-box .statistic-item-icon img{
     width: 45%;
     
     background-color: #C89D66;
-    padding: 74px 79px 58px;
+    padding: 60px;
     background-image: url(../image/contact/contact1.png);
     background-repeat: no-repeat;
     background-position: top right;
@@ -4266,7 +4269,7 @@ section.provide .img-box .statistic-item-icon img{
 
 .flat-get-in-touch .contact-info ul li {
     margin-bottom: 15px;
-    margin-top: 34px;
+    margin-top: 15px;
 }
 
 .flat-get-in-touch .contact-info ul li:first-child {
@@ -4309,6 +4312,9 @@ section.provide .img-box .statistic-item-icon img{
     letter-spacing: 0;
 }
 
+.flat-get-in-touch .contact-info .wrap-info p > a {
+    color: #fff;
+}
 .flat-get-in-touch .get-in-touch input[type=submit] {
     background-color: #C89D66;
     color: #fff;

@@ -66,7 +66,7 @@ $this->setFrameMode(true);
 					<p><a href="<?=$arResult["PROPERTIES"]["site"]["VALUE"];?>"><?=$arResult["PROPERTIES"]["site"]["VALUE"];?></a></p>
 				<?endif;?>
 
-				<?if($arResult["PROPERTIES"]["coords"]["VALUE"]):?>
+				<?if($arResult["PROPERTIES"]["show_map"]["VALUE"] == 'Y'):?>
 					<br>
 					<h5>Карта</h5>
 					<?

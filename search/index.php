@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("image", "/local/templates/empty/assets/images/banner_main/4.jpg");
 $APPLICATION->SetTitle("Результаты поиска");
 ?>
 <?$APPLICATION->IncludeComponent(

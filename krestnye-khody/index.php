@@ -1,15 +1,15 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("image", "/local/templates/empty/assets/images/banner_main/4.jpg");
-$APPLICATION->SetTitle("Новомученики");
+$APPLICATION->SetTitle("Крестные ходы");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"small", 
 	array(
 		"COMPONENT_TEMPLATE" => "small",
 		"IBLOCK_TYPE" => "content",
-		"IBLOCK_ID" => "5",
-		"NEWS_COUNT" => "2",
+		"IBLOCK_ID" => "7",
+		"NEWS_COUNT" => "20",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",
@@ -21,6 +21,7 @@ $APPLICATION->SetTitle("Новомученики");
 		"SORT_ORDER2" => "ASC",
 		"CHECK_DATES" => "Y",
 		"SEF_MODE" => "Y",
+		"SEF_FOLDER" => "/krestnye-khody/",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
@@ -71,7 +72,7 @@ $APPLICATION->SetTitle("Новомученики");
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
-		"PAGER_TEMPLATE" => "bootstrap_v4",
+		"PAGER_TEMPLATE" => ".default",
 		"DISPLAY_TOP_PAGER" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"PAGER_TITLE" => "Новости",
@@ -83,7 +84,6 @@ $APPLICATION->SetTitle("Новомученики");
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
-		"SEF_FOLDER" => "/novomucheniki/",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

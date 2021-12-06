@@ -124,7 +124,10 @@ if(CModule::IncludeModule('iblock')) {
                             </ul>
                             <ul class="icon-follow">
                                 <li><a class="icon open-search-box" href="#"><i class="fas fa-search"></i></a></li>
-                                <li><a class="icon open-menu" href="#"><i class="fas fa-th"></i></a></li>
+                                
+                                <?if($GLOBALS['global_info']['header_extra_show']):?>
+                                    <li><a class="icon open-menu" href="#"><i class="fas fa-th"></i></a></li>
+                                <?endif;?>
                                 
                                 <?if($GLOBALS['global_info']['header_button_show']):?>
                                     <li>

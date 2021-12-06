@@ -43,7 +43,7 @@ $array_tags = array_slice($string_array, 0, $array_length);
 			<?if($arResult["TAGS"]):?>
 				<ul>
 					<?foreach($array_tags as $item):?>
-						<li><a href="#"><?=$item;?></a></li>
+						<li><a style="color: #fff;"><?=$item;?></a></li>
 					<?endforeach;?>	
 				</ul>
 			<?endif;?>

@@ -48,7 +48,7 @@ $this->setFrameMode(true);
                             ?>
 
                             <?foreach($array_tags as $item):?>
-                                <li><a href="#"><?=$item;?></a></li>
+                                <li><a style="color: #fff;"><?=$item;?></a></li>
                             <?endforeach;?>	
                         </ul>
                     <?endif;?>

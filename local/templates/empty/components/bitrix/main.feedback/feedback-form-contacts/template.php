@@ -43,7 +43,7 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 
 	<div class="wrap-submit submit-form">
 		<div class="wrap-btn">
-			<input type="submit" name="submit" class="flat-button-arrow" value="<?=$arParams['SUBMIT_TEXT']?>"></input>
+			<input type="submit" name="submit" class="flat-button-arrow" value="<?=$GLOBALS['global_info']['contacts_page_button_text'];?>"></input>
 		</div>
 	</div>
 </form>

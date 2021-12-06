@@ -17,7 +17,7 @@ $APPLICATION->SetTitle("Новости");
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "N",
 		"SORT_BY1" => "SORT",
-		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "date_create",
 		"SORT_ORDER2" => "DESC",
 		"CHECK_DATES" => "Y",
@@ -46,7 +46,7 @@ $APPLICATION->SetTitle("Новости");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array(
-			0 => "DATE_CREATE",
+			0 => "TAGS",
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
@@ -61,7 +61,7 @@ $APPLICATION->SetTitle("Новости");
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_FIELD_CODE" => array(
-			0 => "DATE_CREATE",
+			0 => "TAGS",
 			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
