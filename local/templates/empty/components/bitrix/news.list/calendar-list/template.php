@@ -14,33 +14,19 @@ $this->setFrameMode(true);
 ?>
 
 <ul class="calendar-list">
-
-<?
-$start_date = date('d.m.Y', time());   
-$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL");
-$arFilter = Array(
-    "IBLOCK_ID"=>"12", 
-    ">=PROPERTY_date"=>ConvertDateTime($start_date, "YYYY-MM-DD"), 
-    "ACTIVE"=>"Y"
-);
-$res = CIBlockElement::GetList(Array("property_date"=>"ASC"), $arFilter, false, Array("nPageSize"=>20), $arSelect);
-while($ob = $res->GetNextElement())
-{
-    $arFields = $ob->GetFields();
-    //echo '<pre>';print_r($arFields);echo '</pre>';
-    ?>
-        <li class="services-section-item" id="<?=$this->GetEditAreaId($arFields['ID']);?>">
+    <?foreach($arResult["ITEMS"] as $arItem):?>
+        <li class="services-section-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<div class="item-content">
-				<h5><a href="#"><?echo ltrim(FormatDate("d F", MakeTimeStamp($arFields["PROPERTY_DATE_VALUE"])), '0');?></a></h5>
+				<h5><a href="#"><?echo ltrim(FormatDate("d F", MakeTimeStamp($arItem["PROPERTIES"]["date"]["VALUE"])), '0');?></a></h5>
 
-				<p><?=$arFields["NAME"]?></p>
+				<p><?=$arItem["NAME"]?></p>
 
                 <ul class="linked-churches">
                     <?
                     $arSelectChurch = Array("ID", "NAME", "DETAIL_PAGE_URL", "PROPERTY_dates", "PROPERTY_address","PREVIEW_PICTURE");
                     $arFilterChurch = Array(
                         "IBLOCK_ID"=>"1", 
-                        "=PROPERTY_dates" => $arFields["ID"], 
+                        "=PROPERTY_dates" => $arItem["ID"], 
                         "ACTIVE"=>"Y"
                     );
                     $resChurch = CIBlockElement::GetList(Array("property_date"=>"ASC"), $arFilterChurch, false, Array("nPageSize"=>20), $arSelectChurch);
@@ -60,13 +46,10 @@ while($ob = $res->GetNextElement())
                     <?}?>
                 </ul>
 
-                <a href="<?=$arFields['DETAIL_PAGE_URL'];?>" class="smaller-list_button-detail">Подробнее >></a>
+                <a href="<?=$arItem['DETAIL_PAGE_URL'];?>" class="smaller-list_button-detail">Подробнее >></a>
 			</div>
 		</li>
-    <?
-}
-?>
-
+    <?endforeach;?>	
 </ul>
 
 
@@ -77,6 +60,3 @@ while($ob = $res->GetNextElement())
 		<?=$arResult["NAV_STRING"]?>
 	</div>
 <?endif;?>
-
-
-

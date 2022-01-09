@@ -18,6 +18,14 @@ if(CModule::IncludeModule('iblock')) {
 <?
 global $searchBlog;
 $searchTags["%TAGS"] = $_REQUEST["tags"];
+
+global $dateFilter;
+$start_date = date('d.m.Y', time());
+$dateFilter = Array(
+    "IBLOCK_ID"=>"12", 
+    ">=PROPERTY_date"=>ConvertDateTime($start_date, "YYYY-MM-DD"), 
+    "ACTIVE"=>"Y"
+);
 ?>
 
 
