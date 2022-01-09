@@ -1,15 +1,15 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Святые источники");
 $APPLICATION->SetPageProperty("image", "/local/templates/empty/assets/images/banner_main/4.jpg");
-$APPLICATION->SetTitle("Святые источники");
-?><?$APPLICATION->IncludeComponent(
+$APPLICATION->SetTitle("Почитаемые захоронения");
+?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"small", 
 	array(
 		"COMPONENT_TEMPLATE" => "small",
 		"IBLOCK_TYPE" => "content",
-		"IBLOCK_ID" => "6",
+		"IBLOCK_ID" => "3",
 		"NEWS_COUNT" => "20",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
@@ -24,7 +24,7 @@ $APPLICATION->SetTitle("Святые источники");
 		"SEF_MODE" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_STYLE" => "N",
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"CACHE_TYPE" => "A",
@@ -64,9 +64,8 @@ $APPLICATION->SetTitle("Святые источники");
 			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "coords",
-			1 => "show_map",
-			2 => "",
+			0 => "",
+			1 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
@@ -85,7 +84,7 @@ $APPLICATION->SetTitle("Святые источники");
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
-		"SEF_FOLDER" => "/kupeli/",
+		"SEF_FOLDER" => "/graves/",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
@@ -93,4 +92,5 @@ $APPLICATION->SetTitle("Святые источники");
 		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
