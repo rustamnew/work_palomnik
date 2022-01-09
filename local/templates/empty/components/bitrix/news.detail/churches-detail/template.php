@@ -16,26 +16,17 @@ $this->setFrameMode(true);
 <div class="row elemdetail">
 	<div class="col-md-12">
 		<div class="blog-item">
-			<div class="img-box">
-				<a href="<?=$arResult["DETAIL_PAGE_URL"]?>" class="open-post">
-					<img class="img-fluid" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="01 Blog">
-				</a>
-
-				<?if($arResult["IBLOCK"]["CODE"] == 'projects'):?>
-					<ul>
-						<li>
-							<?
-							$res = CIBlockSection::GetByID($arResult["IBLOCK_SECTION_ID"]);
-							if($ar_res = $res->GetNext()) {?>
-								<a href="<?=$ar_res["SECTION_PAGE_URL"];?>"><?echo $ar_res["NAME"];?></a>
-							<?}?>
-						</li>
-					</ul>
-				<?endif;?>
-			</div>
+			<?if($arResult["DETAIL_PICTURE"]["SRC"]):?>
+				<div class="img-box">
+					<a href="<?=$arResult["DETAIL_PAGE_URL"]?>" class="open-post">
+						<img class="img-fluid" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="01 Blog">
+					</a>
+				</div>
+			<?endif;?>
 			<div class="text-box">
 				<h4><?=$arResult["NAME"]?></h4>
 				<p><?=$arResult["DETAIL_TEXT"]?></p>
+		
 				<?if($arResult["PROPERTIES"]["consecrate"]["VALUE"]):?>
 					<br>
 					<h5><?=$arResult["PROPERTIES"]["consecrate"]["NAME"];?></h5>
@@ -46,6 +37,18 @@ $this->setFrameMode(true);
 					<br>
 					<h5><?=$arResult["PROPERTIES"]["date_feast"]["NAME"];?></h5>
 					<p><?=$arResult["PROPERTIES"]["date_feast"]["VALUE"];?></p>
+				<?endif;?>
+
+				<?if($arResult["PROPERTIES"]["prayers"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["prayers"]["NAME"];?></h5>
+					<p><?=$arResult["PROPERTIES"]["prayers"]["VALUE"];?></p>
+				<?endif;?>
+
+				<?if($arResult["PROPERTIES"]["fonts_mass"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["fonts_mass"]["NAME"];?></h5>
+					<p><?=$arResult["PROPERTIES"]["fonts_mass"]["VALUE"];?></p>
 				<?endif;?>
 
 				<?if($arResult["PROPERTIES"]["address"]["VALUE"]):?>
@@ -102,6 +105,119 @@ $this->setFrameMode(true);
 						false
 					);?>
 				<?endif;?>
+
+				<div class="linked-items">
+					<?if($arResult["PROPERTIES"]["fonts"]["VALUE"]):?>
+						<br>
+						<h5><?=$arResult["PROPERTIES"]["fonts"]["NAME"];?></h5>
+
+						<div class="linked-items-list">
+							<?foreach($arResult["PROPERTIES"]["fonts"]["VALUE"] as $itemId):?>
+								<?
+								$res = CIBlockElement::GetByID($itemId);
+								if($ar_res = $res->GetNext()) {?>
+									<li class="services-section-item">
+										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
+										<div class="item-content">
+											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
+
+											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+										</div>
+									</li>
+								<?}?>
+							<?endforeach;?>
+						</div>
+					<?endif;?>
+
+					<?if($arResult["PROPERTIES"]["krestnye"]["VALUE"]):?>
+						<br>
+						<h5><?=$arResult["PROPERTIES"]["krestnye"]["NAME"];?></h5>
+						<div class="linked-items-list">
+							<?foreach($arResult["PROPERTIES"]["krestnye"]["VALUE"] as $itemId):?>
+								<?
+								$res = CIBlockElement::GetByID($itemId);
+								if($ar_res = $res->GetNext()) {?>
+									<li class="services-section-item">
+										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
+										<div class="item-content">
+											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
+
+											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+										</div>
+									</li>
+								<?}?>
+							<?endforeach;?>
+						</div>
+					<?endif;?>
+
+					<?if($arResult["PROPERTIES"]["svyatyni"]["VALUE"]):?>
+						<br>
+						<h5><?=$arResult["PROPERTIES"]["svyatyni"]["NAME"];?></h5>
+						<div class="linked-items-list">
+							<?foreach($arResult["PROPERTIES"]["svyatyni"]["VALUE"] as $itemId):?>
+								<?
+								$res = CIBlockElement::GetByID($itemId);
+								if($ar_res = $res->GetNext()) {?>
+									<li class="services-section-item">
+										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
+										<div class="item-content">
+											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
+
+											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+										</div>
+									</li>
+								<?}?>
+							<?endforeach;?>
+						</div>
+					<?endif;?>
+
+					<?if($arResult["PROPERTIES"]["graves"]["VALUE"]):?>
+						<br>
+						<h5><?=$arResult["PROPERTIES"]["graves"]["NAME"];?></h5>
+						<div class="linked-items-list">
+							<?foreach($arResult["PROPERTIES"]["graves"]["VALUE"] as $itemId):?>
+								<?
+								$res = CIBlockElement::GetByID($itemId);
+								if($ar_res = $res->GetNext()) {?>
+									<li class="services-section-item">
+										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
+										<div class="item-content">
+											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
+
+											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+										</div>
+									</li>
+								<?}?>
+							<?endforeach;?>
+						</div>
+					<?endif;?>
+
+					<?if($arResult["PROPERTIES"]["novomuch"]["VALUE"]):?>
+						<br>
+						<h5><?=$arResult["PROPERTIES"]["novomuch"]["NAME"];?></h5>
+						<div class="linked-items-list">
+							<?foreach($arResult["PROPERTIES"]["novomuch"]["VALUE"] as $itemId):?>
+								<?
+								$res = CIBlockElement::GetByID($itemId);
+								if($ar_res = $res->GetNext()) {?>
+									<li class="services-section-item">
+										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
+										<div class="item-content">
+											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
+
+											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+										</div>
+									</li>
+								<?}?>
+							<?endforeach;?>
+						</div>
+					<?endif;?>
+				</div>
 			</div>
 		</div>
 	</div>

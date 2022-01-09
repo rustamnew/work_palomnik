@@ -22,6 +22,8 @@ $this->setFrameMode(true);
 		?>
 		
 		<li class="services-section-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+            <?if($arItem["PREVIEW_PICTURE"]["SRC"]):?><div class="item-image" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)"></div><?endif;?>
+
 			<div class="item-content">
 				<h5><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></h5>
                     <?if($arItem["TAGS"]):?>
@@ -53,9 +55,9 @@ $this->setFrameMode(true);
                         </ul>
                     <?endif;?>
 				<p><?=$arItem["PREVIEW_TEXT"]?></p>
-			</div>
 
-            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+			</div>
 		</li>
 	<?endforeach;?>	
 </ul>

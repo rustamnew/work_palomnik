@@ -932,8 +932,9 @@ header.navs.active{
     color: #FFF;
     //font-weight: 700;
     line-height: 1.2;
-    font-size: 60px;
+    font-size: 50px;
     margin-bottom: 30px;
+    width: 130%;
 }
 .header .banner .about-website{
     
@@ -4530,12 +4531,11 @@ section.provide .img-box .statistic-item-icon img{
     color: #fff;     
     width: fit-content;
 }
-.smaller-list .services-section-item {
-    flex-direction: column;
-}
+
 .smaller-list .services-section-item .smaller-list_button-detail {
     align-self: flex-end;
     color: #C89D66; 
+    white-space: nowrap;
 }
 
 .smaller-list .services-section-item .smaller-list_button-detail:hover {
@@ -4546,4 +4546,98 @@ section.provide .img-box .statistic-item-icon img{
     color: #9B9B9B;
     list-style: disc;
     margin-left: 18px;
+}
+.img-box {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.elemlist .blog-item .img-box {
+    height: 250px;
+    width: 350px;
+}
+
+.owl-carousel .case-study-item .img-box {
+    height: 250px;
+    width: 350px;
+}
+
+.col-md-6.col-lg-4 .blog-item .img-box {
+    height: 250px;
+    width: 350px;
+}
+
+
+.elemdetail .text-box p > a{
+    color: inherit;
+}
+.elemdetail .text-box p > a:hover{
+    color: #C89D66;
+}
+
+.footer h4 {
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+.arkhierey-section {
+    font-family: 'Alice';
+}
+
+.arkhierey-section .row {
+    justify-content: center;
+}
+
+.arkhierey-section .row > img {
+    flex: 1;
+}
+
+
+.arkhierey img {
+    width: 100%;
+}
+
+.arkhierey-info-date {
+    padding: 30px;
+    float: right;
+}
+.arkhierey-info-date li {
+    margin-bottom: 15px;
+}
+.date-title {
+    font-size: 18px;;
+}
+
+.date-value {
+    font-size: 25px;
+}
+
+.arkhierey-bio {
+    margin-bottom: 40px;
+}
+
+.introduction-advisors div:first-child {
+    margin-bottom: 30px;
+}
+
+.commission-section {
+    padding: 60px 0 120px;
+}
+
+.eparchy-info-item {
+    margin-bottom: 60px;
+}
+
+.eparchy-info-item h2 {
+    font-weight: 600;
+}
+
+.breadcrumb-header .bx-breadcrumb .bx-breadcrumb-item span {
+    font-size: 17px;
 }

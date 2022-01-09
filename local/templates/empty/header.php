@@ -3,7 +3,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 $isMainPage = $APPLICATION->GetCurPage(false) === '/';
 ?>
-
 <?require($_SERVER["DOCUMENT_ROOT"].SITE_DIR."include/iblock_id_link.php");?>
 
 <?
@@ -16,7 +15,10 @@ if(CModule::IncludeModule('iblock')) {
 }
 ?>
 
-
+<?
+global $searchBlog;
+$searchTags["%TAGS"] = $_REQUEST["tags"];
+?>
 
 
 <!doctype html>
@@ -26,6 +28,16 @@ if(CModule::IncludeModule('iblock')) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- :: Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c89d66">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+        <!-- :: Favicon -->
 
         <title><?$APPLICATION->ShowTitle();?></title>
         
@@ -75,6 +87,8 @@ if(CModule::IncludeModule('iblock')) {
                 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
             <![endif]-->
         <?$APPLICATION->ShowHead();?>
+
+		<?CJSCore::Init(array("fx"));?>
     </head>
     
     <body>
@@ -147,18 +161,23 @@ if(CModule::IncludeModule('iblock')) {
                         <div class="box-content d-flex align-items-center justify-content-between">
                             <div class="logo">
                                 <a <?if(!$isMainPage):?> href="<?=SITE_DIR?>" <?endif;?> class="logo-nav">
+
+
+
+
+
                                     <?$path = CFile::GetPath($GLOBALS['global_info']['header_logo1']);?>
                                     <?if (stristr($path, '.svg')):?>
                                         <?
-                                        $img_file = $path;
+                                        $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);
+                                        $svg_file = trim($svg_file);
+                                        $color = $arItem["PROPERTIES"]["color_icon"]["VALUE"];
+                                        $background = $arItem["PROPERTIES"]["color_background"]["VALUE"];
+                                        $style =  ' class="img-fluid one"';
+                                        $pos = 4;
+                                        $svg_file = substr_replace($svg_file, $style, $pos, 0);
 
-                                        $svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-                                        if($svg['id']){
-                                            $img_grup = $img_file.'#'.$svg['id'];
-                                        }
-
-                                        $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-                                        print_r($svg_file);
+                                        print_r($svg_file);;
                                         ?>
                                     <?else:?>
                                         <img class="img-fluid one" src=<?=$path?> alt="01 Logo">
@@ -169,15 +188,15 @@ if(CModule::IncludeModule('iblock')) {
                                     <?$path = CFile::GetPath($GLOBALS['global_info']['header_logo2']);?>
                                     <?if (stristr($path, '.svg')):?>
                                         <?
-                                        $img_file = $path;
+                                        $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);
+                                        $svg_file = trim($svg_file);
+                                        $color = $arItem["PROPERTIES"]["color_icon"]["VALUE"];
+                                        $background = $arItem["PROPERTIES"]["color_background"]["VALUE"];
+                                        $style =  ' class="img-fluid two"';
+                                        $pos = 4;
+                                        $svg_file = substr_replace($svg_file, $style, $pos, 0);
 
-                                        $svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-                                        if($svg['id']){
-                                            $img_grup = $img_file.'#'.$svg['id'];
-                                        }
-
-                                        $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-                                        print_r($svg_file);
+                                        print_r($svg_file);;
                                         ?>
                                     <?else:?>
                                         <img class="img-fluid two" src=<?=$path?> alt="02 Logo">
@@ -435,7 +454,7 @@ if(CModule::IncludeModule('iblock')) {
                         "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                         "INCLUDE_SUBSECTIONS" => "N",
                         "MESSAGE_404" => "",
-                        "NEWS_COUNT" => "5",
+                        "NEWS_COUNT" => "15",
                         "PAGER_BASE_LINK_ENABLE" => "N",
                         "PAGER_DESC_NUMBERING" => "N",
                         "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -489,11 +508,12 @@ if(CModule::IncludeModule('iblock')) {
                             <div class="col-md-6">
                                 <div class="banner">
                                     <h1><?$APPLICATION->ShowTitle(false);?></h1>
-                                    <ul>
-                                        <li><a href="<?=SITE_DIR?>">Главная</a></li>
-                                        <li><i class="fas fa-angle-right"></i></li>
-                                        <li><?$APPLICATION->ShowTitle(false);?></li>
-                                    </ul>
+                                    
+                                    <?$APPLICATION->IncludeComponent(
+                                        "bitrix:breadcrumb",
+                                        "",
+                                    Array()
+                                    );?>
                                 </div>
                             </div>
                         </div>
@@ -508,10 +528,3 @@ if(CModule::IncludeModule('iblock')) {
                 ),
                 false
             );?>
-
-
-
-
-
-
-            

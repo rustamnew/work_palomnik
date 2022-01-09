@@ -17,8 +17,16 @@
     });
 
     // :: Height Header Section
-    $('.header, .header .table-cell').height($(window).height() + $('header.navs').height() + 100);
-    $('.header-2, .header-2 .table-cell').height($(window).height() + $('header.navs').height() + 40);
+    //$('.header, .header .table-cell').height($(window).height() + $('header.navs').height() + 100);
+    //$('.header-2, .header-2 .table-cell').height($(window).height() + $('header.navs').height() + 40);
+    //$('.header-2, .header-2 .table-cell').height();
+
+    console.log($(window).height())
+    console.log($(window))
+    console.log($('header.navs').height())
+    console.log($('header.navs'))
+
+    console.log($('.header').height())
 
     // :: Add Class Active For ('.nav-bar')
     $(window).on('scroll', function () {
@@ -50,6 +58,7 @@
     });
 
     // :: Scroll Smooth To Go Section
+    /*
     $('.move-section').on('click', function (e) {
         e.preventDefault();
         var anchorLink = $(this);
@@ -57,7 +66,8 @@
             scrollTop: $(anchorLink.attr('href')).offset().top + 1
         }, 1000);
     });
-
+    */
+   
     // :: Add Class Active To Search Box
     $('.open-search-box').on('click', function () {
         $('.search-box').fadeIn();

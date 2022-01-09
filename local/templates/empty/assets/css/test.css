@@ -1,33 +1,121 @@
-.img-box {
+.services-section-item .item-image{
+    margin-right: 0;
     background-size: cover;
-    background-position: center center;
     background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 340px;
 }
 
-.elemlist .blog-item .img-box {
-    height: 250px;
-    width: 350px;
+.services-section-item h5 {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-.owl-carousel .case-study-item .img-box {
-    height: 250px;
-    width: 350px;
+.services-section-item p {
+    margin-bottom: auto;
 }
 
-.col-md-6.col-lg-4 .blog-item .img-box {
-    height: 250px;
-    width: 350px;
+.services-section-item h5 a{
+    color: #262B3E;
+    font-weight: 600;
+}
+
+.services-section-item img {
+    height: 160px;
+}
+
+.services-section-item .item-content {
+    padding: 0 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 576px) {
+    .services-section-list {
+
+    }
+    .services-section-item {
+        flex-direction: row;
+        align-items: unset;
+        border: 1px solid #e6e6e6;
+        padding: 12px;
+        margin-bottom: 24px;
+
+        width: 100%;
+    }
+    .services-section-item .item-image {
+        margin-right: 20px;
+        height: 160px;
+    }
+    .services-section-item h5 {
+        text-align: unset;
+    }
+    .services-section-item .item-content {
+        padding: 0;
+        width: 100%;
+        //display: unset;
+        align-items: unset;
+    }
+}
+@media (min-width: 768px) {
+    .services-section-item .item-image {  
+        max-width: 240px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .services-section-item .item-image {
+        width: 50%;
+    }
 }
 
 
-.elemdetail .text-box p > a{
-    color: inherit;
+
+.owl-item.active:last-child {
+    margin-left: -1px;
 }
-.elemdetail .text-box p > a:hover{
-    color: #C89D66;
+.owl-item.active:first-child {
+    margin-left: 0;
 }
 
-.footer h4 {
-    font-size: 1.3rem;
+.linked-items .services-section-item .smaller-list_button-detail {
+    margin-top: 20px;
+    align-self: flex-end;
 }
+
+
+.linked-items .owl-carousel{
+    display: flex !important;
+    flex-direction: row;   
+    justify-content: center;
+}
+
+.calendar-list .services-section-item h5 a {
+    padding: 5px 10px;
+    border-radius: 16px;
+    background-color: #C89D66;
+    color: #fff;
+    font-weight: 500;
+}
+
+.linked-churches .linked-churches-item {
+    display: flex;
+}
+.linked-churches .linked-churches-item .item-image {
+    height: 100px;
+    max-width: 150px;
+}
+
+.linked-churches .linked-churches-item h6 {
+    font-size: 20px;
+}
+
+
+.row-video .blog-item .text-box {
+    padding: 10px 0px 0px 10px;
+}
+
 
