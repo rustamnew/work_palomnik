@@ -14,7 +14,7 @@ $APPLICATION->SetTitle("Это интересно");
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
@@ -84,6 +84,15 @@ $APPLICATION->SetTitle("Это интересно");
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
 		"SEF_FOLDER" => "/video/",
+		"FILTER_NAME" => "searchTags",
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

@@ -136,13 +136,13 @@ $dateFilter = Array(
                                         </a>
                                     </li>
                                 <?endif;?>
-                                <?if($GLOBALS['global_info']['contacts_phone1'] and $GLOBALS['global_info']['contacts_phone_show']):?>
+                                <?/*if($GLOBALS['global_info']['contacts_phone1'] and $GLOBALS['global_info']['contacts_phone_show']):?>
                                     <li>
                                         <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
                                             Телефон : <?=$GLOBALS['global_info']['contacts_phone1'];?>
                                         </a>
                                     </li>
-                                <?endif;?>
+                                <?endif;*/?>
                             </ul>
                             <ul class="icon-follow">
                                 <li><a class="icon open-search-box" href="#"><i class="fas fa-search"></i></a></li>
@@ -513,7 +513,7 @@ $dateFilter = Array(
                     <div class="overlay"></div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="banner">
                                     <h1><?$APPLICATION->ShowTitle(false);?></h1>
                                     

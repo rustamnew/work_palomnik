@@ -32,8 +32,14 @@ $APPLICATION->SetTitle("Контакты");
                         </div>
                         <div class="wrap-info">
                             <h2><?=$GLOBALS['global_info']['contacts_page_phone_title'];?></h2>
-                            <p class="top"><a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>"><?=$GLOBALS['global_info']['contacts_phone1'];?></a></p>
-                            <p class="bottom"><a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>"><?=$GLOBALS['global_info']['contacts_phone2'];?></a></p>
+                            <p class="top">
+								<a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>"><?=$GLOBALS['global_info']['contacts_phone1'];?></a>
+								<p><?=$GLOBALS['global_info']['contacts_phone1_title'];?></p>
+							</p>
+                            <p class="bottom">
+								<a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>"><?=$GLOBALS['global_info']['contacts_phone2'];?></a>
+								<p><?=$GLOBALS['global_info']['contacts_phone2_title'];?></p>
+							</p>
                         </div>
                     </li>
                 <?endif;?>

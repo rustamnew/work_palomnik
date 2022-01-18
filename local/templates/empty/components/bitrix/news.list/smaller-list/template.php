@@ -50,7 +50,7 @@ $this->setFrameMode(true);
                             ?>
 
                             <?foreach($array_tags as $item):?>
-                                <li><a style="color: #fff;"><?=$item;?></a></li>
+                                <li><a href><?=$item;?></a></li>
                             <?endforeach;?>	
                         </ul>
                     <?endif;?>
