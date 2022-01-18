@@ -50,7 +50,7 @@ $APPLICATION->SetTitle("Новости");
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "",
+			0 => "date",
 			1 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",

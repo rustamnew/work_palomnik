@@ -26,6 +26,26 @@ $dateFilter = Array(
     ">=PROPERTY_date"=>ConvertDateTime($start_date, "YYYY-MM-DD"), 
     "ACTIVE"=>"Y"
 );
+
+
+
+
+$today_date = date('d.m.Y', time()); 
+$start_date = date('d.m.Y', strtotime($today_date. ' - 30 days'));
+$end_date = date('d.m.Y', strtotime($today_date. ' + 30 days'));
+
+$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL", "PROPERTY_date_new", "PROPERTY_date_old", "PREVIEW_TEXT");
+$arFilter = Array(
+    "IBLOCK_ID"=>"14", 
+    ">=PROPERTY_date_new"=>ConvertDateTime($start_date, "YYYY-MM-DD"), 
+    "<=PROPERTY_date_new"=>ConvertDateTime($end_date, "YYYY-MM-DD"), 
+    "ACTIVE"=>"Y",
+    //"PROPERTY_date"=> ConvertDateTime($today_date, "YYYY-MM-DD")
+);
+
+
+
+
 ?>
 
 

@@ -18,37 +18,37 @@ $this->setFrameMode(true);
 		<div class="row">
 			<div class="col-lg-4">		
 				<?$APPLICATION->IncludeComponent(
-					"bitrix:search.tags.cloud", 
-					"news-tags", 
-					array(
-						"COMPONENT_TEMPLATE" => "news-tags",
-						"SORT" => "NAME",
-						"PAGE_ELEMENTS" => "10",
-						"PERIOD" => "",
-						"URL_SEARCH" => "/search/index.php",
-						"TAGS_INHERIT" => "Y",
-						"CHECK_DATES" => "N",
-						"FILTER_NAME" => "",
-						"arrFILTER" => array(
-							0 => "iblock_content",
-						),
-						"arrFILTER_iblock_content" => array(
-							0 => "8",
-						),
-						"CACHE_TYPE" => "A",
-						"CACHE_TIME" => "3600",
-						"FONT_MAX" => "50",
-						"FONT_MIN" => "10",
-						"COLOR_NEW" => "3E74E6",
-						"COLOR_OLD" => "C0C0C0",
-						"PERIOD_NEW_TAGS" => "",
-						"SHOW_CHAIN" => "Y",
-						"COLOR_TYPE" => "Y",
-						"WIDTH" => "100%",
-						"TITLE" => "Теги"
-					),
-					false
-				);?>
+	"bitrix:search.tags.cloud", 
+	"news-tags", 
+	array(
+		"COMPONENT_TEMPLATE" => "news-tags",
+		"SORT" => "NAME",
+		"PAGE_ELEMENTS" => "10",
+		"PERIOD" => "",
+		"URL_SEARCH" => "",
+		"TAGS_INHERIT" => "N",
+		"CHECK_DATES" => "N",
+		"FILTER_NAME" => "",
+		"arrFILTER" => array(
+			0 => "iblock_content",
+		),
+		"arrFILTER_iblock_content" => array(
+			0 => "13",
+		),
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"FONT_MAX" => "50",
+		"FONT_MIN" => "10",
+		"COLOR_NEW" => "3E74E6",
+		"COLOR_OLD" => "C0C0C0",
+		"PERIOD_NEW_TAGS" => "",
+		"SHOW_CHAIN" => "Y",
+		"COLOR_TYPE" => "Y",
+		"WIDTH" => "100%",
+		"TITLE" => "Теги"
+	),
+	false
+);?>
 				
 				<?$APPLICATION->IncludeComponent(
 					"bitrix:news.list", 

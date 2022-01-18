@@ -24,7 +24,7 @@ $this->setFrameMode(true);
 				</div>
 			<?endif;?>
 			<div class="text-box">
-				<h4><?=$arResult["NAME"]?></h4>
+				<h5><?=$arResult["NAME"]?></h5>
 				<p><?=$arResult["DETAIL_TEXT"]?></p>
 		
 				<?if($arResult["PROPERTIES"]["consecrate"]["VALUE"]):?>
@@ -122,7 +122,7 @@ $this->setFrameMode(true);
 											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
 										</div>
 									</li>
 								<?}?>
@@ -144,7 +144,7 @@ $this->setFrameMode(true);
 											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
 										</div>
 									</li>
 								<?}?>
@@ -166,7 +166,7 @@ $this->setFrameMode(true);
 											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
 										</div>
 									</li>
 								<?}?>
@@ -188,7 +188,7 @@ $this->setFrameMode(true);
 											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
 										</div>
 									</li>
 								<?}?>
@@ -210,7 +210,7 @@ $this->setFrameMode(true);
 											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="/kupeli/istochnik-sv-proroka-ilii/" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
 										</div>
 									</li>
 								<?}?>

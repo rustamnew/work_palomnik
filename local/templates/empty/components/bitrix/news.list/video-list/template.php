@@ -40,7 +40,7 @@ $this->setFrameMode(true);
 						<?
 						$string = $arItem["TAGS"];
 						$string_array = explode(', ', $string);
-						$string_done = "";
+						/*$string_done = "";
 						$max_length = 60;
 						$array_length = 0;
 
@@ -53,7 +53,7 @@ $this->setFrameMode(true);
 								}
 								$array_length = $array_length + 1;
 							}
-						}
+						}*/
 						$array_tags = array_slice($string_array, 0, $array_length);
 						?>
 						<?foreach($array_tags as $item):?>

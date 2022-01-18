@@ -9,7 +9,7 @@ $APPLICATION->SetTitle("Новомученики");
 		"COMPONENT_TEMPLATE" => "small",
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "5",
-		"NEWS_COUNT" => "2",
+		"NEWS_COUNT" => "10",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",

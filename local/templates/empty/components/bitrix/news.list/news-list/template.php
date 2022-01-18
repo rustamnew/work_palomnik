@@ -54,7 +54,7 @@ $this->setFrameMode(true);
 					<?endif;?>
 				</div>
 				<div class="text-box">
-					<span class="blog-date"><?echo FormatDateFromDB($arItem["DATE_CREATE"], 'SHORT');?></span>
+					<?if ($arItem["PROPERTIES"]["date"]["VALUE"]):?><span class="blog-date"><?echo FormatDateFromDB($arItem["PROPERTIES"]["date"]["VALUE"], 'SHORT');?></span><?endif;?>
 					<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="title-blog">
 						<h5><?=$arItem["NAME"]?></h5>
 					</a>
@@ -63,8 +63,7 @@ $this->setFrameMode(true);
 				</div>
 			</div>
 		</div>
-	
-		
+
 	<?endforeach;?>	
 	
 	<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
@@ -73,6 +72,8 @@ $this->setFrameMode(true);
 		</div>
 	<?endif;?>
 </div>
+
+
 
 
 

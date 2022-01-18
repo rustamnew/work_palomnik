@@ -12,9 +12,24 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
+
+<?
+$today_date = date('d.m.Y', time());
+$arSelect = Array("ID", "NAME", /*"PROPERTY_dates"*/);
+$arFilter = Array(
+	"IBLOCK_ID"=>"14", 
+	"=PROPERTY_date_new" => ConvertDateTime($today_date, "YYYY-MM-DD"),
+	"ACTIVE"=>"Y"
+);
+$res = CIBlockElement::GetList(Array("property_date_new"=>"ASC"), $arFilter, false, Array("nPageSize" => 1), $arSelect);
+if ($ob = $res->Fetch()):?>
+	<?$id = $ob["ID"];?>
+<?endif;?>
+
 <?$ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
-	"test",
+	"calendar-sidebar-detail",
 	Array(
 		"DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
 		"DISPLAY_NAME" => $arParams["DISPLAY_NAME"],
