@@ -18,7 +18,9 @@ $this->setFrameMode(true);
 
 
 <?
-$arFilter = array("IBLOCK_ID" => $arResult['IBLOCK_ID']);
+$arFilter = array(
+   "IBLOCK_ID" => $arResult['IBLOCK_ID']
+);
 $res = CIBlockElement::GetList(array("property_date_new"=>"ASC"),$arFilter,false,false,array('ID','NAME','DETAIL_PAGE_URL', 'PROPERTY_date_new'));
 $i=0;
 while ($ar = $res -> GetNext()) {

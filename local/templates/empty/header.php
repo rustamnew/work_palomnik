@@ -19,6 +19,9 @@ if(CModule::IncludeModule('iblock')) {
 global $searchBlog;
 $searchTags["%TAGS"] = $_REQUEST["tags"];
 
+
+$today_date = date('d.m.Y', time()); 
+
 global $dateFilter;
 $start_date = date('d.m.Y', time());
 $dateFilter = Array(
@@ -27,25 +30,25 @@ $dateFilter = Array(
     "ACTIVE"=>"Y"
 );
 
-
-
-
-$today_date = date('d.m.Y', time()); 
-$start_date = date('d.m.Y', strtotime($today_date. ' - 30 days'));
+global $dateFilter30days;
 $end_date = date('d.m.Y', strtotime($today_date. ' + 30 days'));
-
-$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL", "PROPERTY_date_new", "PROPERTY_date_old", "PREVIEW_TEXT");
-$arFilter = Array(
-    "IBLOCK_ID"=>"14", 
-    ">=PROPERTY_date_new"=>ConvertDateTime($start_date, "YYYY-MM-DD"), 
-    "<=PROPERTY_date_new"=>ConvertDateTime($end_date, "YYYY-MM-DD"), 
+$dateFilter30days = Array(
+    "IBLOCK_ID"=>"12", 
+    ">=PROPERTY_date"=>ConvertDateTime($today_date, "YYYY-MM-DD"), 
+    "<=PROPERTY_date"=>ConvertDateTime($end_date, "YYYY-MM-DD"), 
     "ACTIVE"=>"Y",
     //"PROPERTY_date"=> ConvertDateTime($today_date, "YYYY-MM-DD")
 );
 
-
-
-
+global $dateFilter60days;
+$start_date = date('d.m.Y', strtotime($today_date. ' - 30 days'));
+$end_date = date('d.m.Y', strtotime($today_date. ' + 30 days'));
+$dateFilter60days = Array(
+    "IBLOCK_ID"=>"14", 
+    ">=PROPERTY_date_new"=>ConvertDateTime($today_date, "YYYY-MM-DD"), 
+    "<=PROPERTY_date_new"=>ConvertDateTime($end_date, "YYYY-MM-DD"), 
+    "ACTIVE"=>"Y",
+);
 ?>
 
 
