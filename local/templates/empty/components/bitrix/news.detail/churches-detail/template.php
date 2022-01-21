@@ -33,16 +33,16 @@ $this->setFrameMode(true);
 					<p><?=$arResult["PROPERTIES"]["consecrate"]["VALUE"];?></p>
 				<?endif;?>
 
-				<?if($arResult["PROPERTIES"]["date_feast"]["VALUE"]):?>
-					<br>
-					<h5><?=$arResult["PROPERTIES"]["date_feast"]["NAME"];?></h5>
-					<p><?=$arResult["PROPERTIES"]["date_feast"]["VALUE"];?></p>
-				<?endif;?>
-
 				<?if($arResult["PROPERTIES"]["prayers"]["VALUE"]):?>
 					<br>
 					<h5><?=$arResult["PROPERTIES"]["prayers"]["NAME"];?></h5>
 					<p><?=$arResult["PROPERTIES"]["prayers"]["VALUE"];?></p>
+				<?endif;?>
+
+				<?if($arResult["PROPERTIES"]["night"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["night"]["NAME"];?></h5>
+					<p><?=$arResult["PROPERTIES"]["night"]["VALUE"];?></p>
 				<?endif;?>
 
 				<?if($arResult["PROPERTIES"]["fonts_mass"]["VALUE"]):?>
@@ -60,13 +60,26 @@ $this->setFrameMode(true);
 				<?if($arResult["PROPERTIES"]["phone"]["VALUE"]):?>
 					<br>
 					<h5><?=$arResult["PROPERTIES"]["phone"]["NAME"];?></h5>
-					<p><a href="tel:<?=$arResult["PROPERTIES"]["phone"]["VALUE"];?>"><?=$arResult["PROPERTIES"]["phone"]["VALUE"];?></a></p>
+					<?foreach($arResult["PROPERTIES"]["phone"]["VALUE"] as $arItem):?>
+						<p><a href="tel:<?=$arItem;?>"><?=$arItem;?></a></p>
+					<?endforeach;?>
+					
+				<?endif;?>
+
+				<?if($arResult["PROPERTIES"]["social"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["social"]["NAME"];?></h5>
+					<?foreach($arResult["PROPERTIES"]["social"]["VALUE"] as $arItem):?>
+						<p><a href="<?=$arItem;?>"><?=$arItem;?></a></p>
+					<?endforeach;?>
 				<?endif;?>
 
 				<?if($arResult["PROPERTIES"]["site"]["VALUE"]):?>
 					<br>
 					<h5><?=$arResult["PROPERTIES"]["site"]["NAME"];?></h5>
-					<p><a href="<?=$arResult["PROPERTIES"]["site"]["VALUE"];?>"><?=$arResult["PROPERTIES"]["site"]["VALUE"];?></a></p>
+					<?foreach($arResult["PROPERTIES"]["site"]["VALUE"] as $arItem):?>
+						<p><a href="<?=$arItem;?>"><?=$arItem;?></a></p>
+					<?endforeach;?>
 				<?endif;?>
 
 				<?if($arResult["PROPERTIES"]["show_map"]["VALUE"] == 'Y'):?>
@@ -119,7 +132,7 @@ $this->setFrameMode(true);
 									<li class="services-section-item">
 										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
 										<div class="item-content">
-											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+										<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
 											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
@@ -141,10 +154,12 @@ $this->setFrameMode(true);
 									<li class="services-section-item">
 										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
 										<div class="item-content">
-											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+										<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<?if($ar_res["DETAIL_TEXT"]):?>
+												<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+											<?endif;?>
 										</div>
 									</li>
 								<?}?>
@@ -163,10 +178,12 @@ $this->setFrameMode(true);
 									<li class="services-section-item">
 										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
 										<div class="item-content">
-											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+										<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<?if($ar_res["DETAIL_TEXT"]):?>
+												<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+											<?endif;?>
 										</div>
 									</li>
 								<?}?>
@@ -185,10 +202,12 @@ $this->setFrameMode(true);
 									<li class="services-section-item">
 										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
 										<div class="item-content">
-											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+										<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<?if($ar_res["DETAIL_TEXT"]):?>
+												<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+											<?endif;?>
 										</div>
 									</li>
 								<?}?>
@@ -207,13 +226,84 @@ $this->setFrameMode(true);
 									<li class="services-section-item">
 										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
 										<div class="item-content">
-											<h5><a href="<?=$ar_res["DETAIL_PAGE_URL"];?>"><?=$ar_res["NAME"];?></a></h5>
+											<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
-											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>
+											<?if($ar_res["DETAIL_TEXT"]):?>
+												<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+											<?endif;?>
 										</div>
 									</li>
 								<?}?>
+							<?endforeach;?>
+						</div>
+					<?endif;?>
+
+					<?if($arResult["PROPERTIES"]["dates"]["VALUE"]):?>
+						<br>
+						<h5><?=$arResult["PROPERTIES"]["dates"]["NAME"];?></h5>
+						<div class="linked-items-list">
+							<?foreach($arResult["PROPERTIES"]["dates"]["VALUE"] as $itemId):?>
+								<?
+								$arFilter = array(
+									"ID" => $itemId,
+									"ACTIVE" => "Y",
+								);
+								$arSelect = Array(
+									"ID", 
+									"NAME", 
+									"PROPERTY_date",
+									"PROPERTY_title",
+									"PREVIEW_TEXT",
+									"DETAIL_TEXT",
+									"DETAIL_PAGE_URL",
+									"PREVIEW_PICTURE"
+								);
+								$res = CIBlockElement::GetList(Array("property_date"=>"ASC"), $arFilter, false, false, $arSelect);
+							
+								while($ob = $res->GetNextElement()) {
+									$ar_res = $ob->GetFields();?>
+									<li class="services-section-item">
+										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
+										<div class="item-content">
+											<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["PROPERTY_TITLE_VALUE"];?></a></h5>
+											<p><?echo ltrim(FormatDate("d F", MakeTimeStamp($ar_res["PROPERTY_DATE_VALUE"])), '0');?></p>
+											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
+
+											<?if($ar_res["DETAIL_TEXT"]):?>
+												<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+											<?endif;?>
+										</div>
+									</li>
+								<?}?>
+
+								<?/*
+								$res = CIBlockElement::GetByID($itemId);
+								if($ar_res = $res->GetNext()) {?>
+									<li class="services-section-item">
+										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
+										<div class="item-content">
+											<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
+											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
+
+											<?if($ar_res["DETAIL_TEXT"]):?>
+												<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+											<?endif;?>
+										</div>
+									</li>
+								<?}*/?>
+							<?endforeach;?>
+						</div>
+					<?endif;?>
+
+					<?if($arResult["PROPERTIES"]["gallery"]["VALUE"]):?>
+						<br>
+						<h5><?=$arResult["PROPERTIES"]["gallery"]["NAME"];?></h5>
+						<div class="gallery-church">
+							<?foreach($arResult["PROPERTIES"]["gallery"]["VALUE"] as $arItemGallery):?>
+								<a data-fancybox="church-gallery" href="<?echo CFile::GetPath($arItemGallery);?>">
+									<img src="<?echo CFile::GetPath($arItemGallery);?>" alt="test">
+								</a>
 							<?endforeach;?>
 						</div>
 					<?endif;?>

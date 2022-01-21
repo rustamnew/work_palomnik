@@ -21,13 +21,6 @@
     //$('.header-2, .header-2 .table-cell').height($(window).height() + $('header.navs').height() + 40);
     //$('.header-2, .header-2 .table-cell').height();
 
-    console.log($(window).height())
-    console.log($(window))
-    console.log($('header.navs').height())
-    console.log($('header.navs'))
-
-    console.log($('.header').height())
-
     // :: Add Class Active For ('.nav-bar')
     $(window).on('scroll', function () {
         if ($(window).scrollTop() > $('header.navs').height() + 30) {
@@ -410,6 +403,20 @@ $(document).ready(function () {
             left: x
         });
     });
+
+    //Gridify
+
+    let options = {
+        srcNode: 'img',             // grid items
+        margin: '10px',             // margin in pixel
+        width: '220px',             // grid item width in pixel
+        max_width: '',              // dynamic gird item width
+        resizable: true,            // re-layout if window resize
+        transition: 'all 0.5s ease' // support transition for CSS3
+    }
+
+    
+    document.querySelector('.gallery-church').gridify(options)
 });
 
 
@@ -485,6 +492,10 @@ let closeFancybox = (e) => {
     e.preventDefault()
     formWrap.classList.remove('active')
 }
+
+
+
+
 
 
 

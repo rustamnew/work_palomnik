@@ -48,16 +48,64 @@ $array_tags = array_slice($string_array, 0, $array_length);
 			<?endif;?>
 
 			<div class="text-box">
-				<?if($arResult["TAGS"]):?>
-					<ul>
-						<?foreach($array_tags as $item):?>
-							<li><a style="color: #fff;"><?=$item;?></a></li>
-						<?endforeach;?>	
+				<?if($arResult["IBLOCK_SECTION_ID"]):?>
+					<ul class="tags-list">
+						<li>
+							<?$res = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID']);?>
+							<?if($ar_res = $res->GetNext()):?>
+								<a style="color: #fff;" href="<?=$ar_res["SECTION_PAGE_URL"]?>">
+									<?=$ar_res["NAME"]?>
+								</a>
+							<?endif;?>
+						</li>
 					</ul>
 				<?endif;?>
 
 				<h5><?=$arResult["NAME"]?></h5>
 				<p><?=$arResult["DETAIL_TEXT"]?></p>
+
+				<?$resCode = CIBlock::GetByID($arResult["IBLOCK_ID"]);?>
+                <?if($ar_res = $resCode->GetNext()):?>
+                    
+                    <?$code = "PROPERTY_".$ar_res["CODE"];?>
+                    <?$condition = "=".$code;?>
+                    <ul class="linked-churches">
+                        <?
+                        $arSelectChurch = Array("ID", "NAME", "DETAIL_PAGE_URL", $code, "PROPERTY_address","PREVIEW_PICTURE");
+                        $arFilterChurch = Array(
+                            "IBLOCK_ID"=>"1", 
+                            $condition => $arResult["ID"], 
+                            "ACTIVE"=>"Y"
+                        );
+                        $resChurch = CIBlockElement::GetList(Array("property_date"=>"ASC"), $arFilterChurch, false, Array("nPageSize"=>20), $arSelectChurch);
+                        while($obChurch = $resChurch->GetNextElement())
+                        {
+                            $arFieldsChurch = $obChurch->GetFields();?>
+
+                            <li class="linked-churches-item">
+                                <div class="item-image" style="background-image: url(<?echo CFile::GetPath($arFieldsChurch["PREVIEW_PICTURE"]);?>)"></div>
+
+                                <div class="item-content">
+                                    <h6><a href="<?=$arFieldsChurch["DETAIL_PAGE_URL"]?>"><?=$arFieldsChurch["NAME"]?></a></h6>
+                                    <p><?=$arFieldsChurch["PROPERTY_ADDRESS_VALUE"]?></p>
+                                </div>
+                            </li>
+                            <?//echo '<pre>';print_r($arFieldsChurch);echo '</pre>';?>
+                        <?}?>
+                    </ul>
+					<?if($arResult["TAGS"]):?>
+						<ul class="tags-list">
+						<?
+						$string = $arResult["TAGS"];
+						$string_array = explode(', ', $string);
+						$array_tags = array_slice($string_array, 0, $array_length);
+						?>
+						<?foreach($array_tags as $item):?>
+							<li><a ><?=$item;?></a></li>
+						<?endforeach;?>	
+						</ul>
+					<?endif;?>
+                <?endif;?>
 				
 				<?if($arResult["PROPERTIES"]["show_map"]["VALUE"] == 'Y'):?>
 					<h5>Карта</h5>

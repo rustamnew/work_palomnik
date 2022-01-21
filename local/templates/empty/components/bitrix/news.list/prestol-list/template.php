@@ -45,6 +45,12 @@ $this->setFrameMode(true);
                         <?//echo '<pre>';print_r($arFieldsChurch);echo '</pre>';?>
                     <?}?>
                 </ul>
+
+                <p>
+                    <?$res = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID']);
+                    if($ar_res = $res->GetNext())
+                    echo $ar_res['NAME'];?>
+                </p>
 			</div>
 		</li>
     <?endforeach;?>	
@@ -58,3 +64,6 @@ $this->setFrameMode(true);
 		<?=$arResult["NAV_STRING"]?>
 	</div>
 <?endif;?>
+
+
+<?/*echo '<pre>';print_r($arResult["ITEMS"]);echo '</pre>';*/?>

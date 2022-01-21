@@ -54,7 +54,11 @@ $arLink['NEXT'] = isset($arNavi[$iCurPos+1]) ? $arNavi[$iCurPos+1] : '';
 
 <div class="">По новому стилю <?=$arResult["PROPERTIES"]["date_new"]["VALUE"];?></div>
 <div class="">По старому стилю <?=$arResult["PROPERTIES"]["date_old"]["VALUE"];?></div>
-<div class=""><?=$arResult["PREVIEW_TEXT"];?></div>
+<div class="">
+   <?if($arResult["PREVIEW_TEXT"]):?>
+      <?=mb_substr($arResult["PREVIEW_TEXT"], 0, 500 ).'...'?>
+   <?endif;?>
+</div>
 
 <a href="/calendar/?ELEMENT_ID=<?=$arResult["ID"]?>">Подробнее</a>
 </div>

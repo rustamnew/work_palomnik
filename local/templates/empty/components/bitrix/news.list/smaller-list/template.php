@@ -25,9 +25,9 @@ $this->setFrameMode(true);
             <?if($arItem["PREVIEW_PICTURE"]["SRC"]):?><div class="item-image" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)"></div><?endif;?>
 
 			<div class="item-content">
-				<h5><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></h5>
-                    <?if($arItem["TAGS"]):?>
-                        <ul>
+				<h5><a <?if($arItem["DETAIL_TEXT"]):?>href="<?=$arItem["DETAIL_PAGE_URL"]?>"<?endif;?>><?=$arItem["NAME"]?></a></h5>
+                    <?/*if($arItem["TAGS"]):?>
+                        <ul class="tags-list">
                             <?
                             $string = $arItem["TAGS"];
                             $string_array = explode(', ', $string);
@@ -53,10 +53,69 @@ $this->setFrameMode(true);
                                 <li><a style="color: #fff;"><?=$item;?></a></li>
                             <?endforeach;?>	
                         </ul>
+                    <?endif;*/?>
+                    <?if($arItem["IBLOCK_SECTION_ID"]):?>
+                        <ul class="tags-list">
+                            <li>
+                                <?$res = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID']);?>
+                                <?if($ar_res = $res->GetNext()):?>
+                                    <a style="color: #fff;" href="<?=$ar_res["SECTION_PAGE_URL"]?>">
+                                        <?=$ar_res["NAME"]?>
+                                    </a>
+                                <?endif;?>
+                            </li>
+                        </ul>
                     <?endif;?>
 				<p><?=$arItem["PREVIEW_TEXT"]?></p>
 
-                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+
+                <?$resCode = CIBlock::GetByID($arItem["IBLOCK_ID"]);?>
+                <?if($ar_res = $resCode->GetNext()):?>
+                    
+                    <?$code = "PROPERTY_".$ar_res["CODE"];?>
+                    <?$condition = "=".$code;?>
+                    <ul class="linked-churches">
+                        <?
+                        $arSelectChurch = Array("ID", "NAME", "DETAIL_PAGE_URL", $code, "PROPERTY_address","PREVIEW_PICTURE");
+                        $arFilterChurch = Array(
+                            "IBLOCK_ID"=>"1", 
+                            $condition => $arItem["ID"], 
+                            "ACTIVE"=>"Y"
+                        );
+                        $resChurch = CIBlockElement::GetList(Array("property_date"=>"ASC"), $arFilterChurch, false, Array("nPageSize"=>20), $arSelectChurch);
+                        while($obChurch = $resChurch->GetNextElement())
+                        {
+                            $arFieldsChurch = $obChurch->GetFields();?>
+
+                            <li class="linked-churches-item">
+                                <div class="item-image" style="background-image: url(<?echo CFile::GetPath($arFieldsChurch["PREVIEW_PICTURE"]);?>)"></div>
+
+                                <div class="item-content">
+                                    <h6><a href="<?=$arFieldsChurch["DETAIL_PAGE_URL"]?>"><?=$arFieldsChurch["NAME"]?></a></h6>
+                                    <p><?=$arFieldsChurch["PROPERTY_ADDRESS_VALUE"]?></p>
+                                </div>
+                            </li>
+                            <?//echo '<pre>';print_r($arFieldsChurch);echo '</pre>';?>
+                        <?}?>
+                    </ul>
+                <?endif;?>
+
+                <?if($arItem["TAGS"]):?>
+                    <ul class="tags-list">
+                    <?
+                    $string = $arItem["TAGS"];
+                    $string_array = explode(', ', $string);
+                    $array_tags = array_slice($string_array, 0, $array_length);
+                    ?>
+                    <?foreach($array_tags as $item):?>
+                        <li><a href="/video/?tags=<?=$item;?>"><?=$item;?></a></li>
+                    <?endforeach;?>	
+                    </ul>
+                <?endif;?>
+
+                <?if($arItem["DETAIL_TEXT"]):?>
+                    <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
+                <?endif;?>
 			</div>
 		</li>
 	<?endforeach;?>	

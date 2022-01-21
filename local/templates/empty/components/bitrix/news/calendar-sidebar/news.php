@@ -13,16 +13,28 @@
 $this->setFrameMode(true);
 ?>
 
-<?echo $_GET["id"];?>
+<?
+$id;
+
+$today_date = date('d.m.Y', time());
+$arSelect = Array("ID", "NAME");
+$arFilter = Array(
+	"IBLOCK_ID"=>"14", 
+	"=PROPERTY_date_new" => ConvertDateTime($today_date, "YYYY-MM-DD"),
+	"ACTIVE"=>"Y"
+);
+$res = CIBlockElement::GetList(Array("property_date_new"=>"ASC"), $arFilter, false, Array("nPageSize" => 1), $arSelect);
+if ($ob = $res->Fetch()):?>
+	<?$id = $ob["ID"];?>
+<?endif;?>
 
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail", 
 	"calendar-sidebar-detail", 
 	array(
-		"COMPONENT_TEMPLATE" => "test",
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "14",
-		"ELEMENT_ID" => "92",
+		"ELEMENT_ID" => $id,
 		"ELEMENT_CODE" => "",
 		"CHECK_DATES" => "Y",
 		"FIELD_CODE" => array(

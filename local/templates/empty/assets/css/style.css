@@ -2133,15 +2133,7 @@ header.navs.active{
     height: 55px;
     margin: auto;
 }
-.owl-testimonial.owl-theme .owl-dots .owl-dot:nth-of-type(1) span{
-    //background-image: url(../images/testimonial/01_testimonial.jpg);
-}
-.owl-testimonial.owl-theme .owl-dots .owl-dot:nth-of-type(2) span{
-    //background-image: url(../images/testimonial/02_testimonial.jpg);
-}
-.owl-testimonial.owl-theme .owl-dots .owl-dot:nth-of-type(3) span{
-    //background-image: url(../images/testimonial/03_testimonial.jpg);
-}
+
 .owl-testimonial.owl-theme .owl-nav{
     display: none;
 }
@@ -2149,7 +2141,7 @@ header.navs.active{
 /* :: Testimonial And Subscribe */
 .testimonial-and-subscribe,
 .testimonial-4{
-    //background-image: url(../images/testimonial-and-subscribe/01_testimonial-and-subscribe.jpg);
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3595,8 +3587,9 @@ div.bx-component-opener {
     padding-bottom: 0;
 }
 
+.single-practice-areas-list li.open .link a, 
 .single-practice-areas-list li.active .link a, 
-.single-practice-areas-list li:hover .link a{
+.single-practice-areas-list li:hover .link a {
     color: #C89D66;
 }
  
@@ -4497,7 +4490,7 @@ section.provide .img-box .statistic-item-icon img{
     display: flex;
     justify-content: center;
 }
-
+/*
 .smaller-list ul,
 .smaller-detail .text-box > ul {
     display: flex;
@@ -4516,7 +4509,7 @@ section.provide .img-box .statistic-item-icon img{
     color: #fff;     
     width: fit-content;
 }
-
+*/
 .smaller-list .services-section-item .smaller-list_button-detail {
     align-self: flex-end;
     color: #C89D66; 
@@ -4715,7 +4708,7 @@ section.provide .img-box .statistic-item-icon img{
     .services-section-item .item-content {
         padding: 0;
         width: 100%;
-        //display: unset;
+
         align-items: unset;
     }
 }
@@ -4762,8 +4755,10 @@ section.provide .img-box .statistic-item-icon img{
 
 .linked-churches .linked-churches-item {
     display: flex;
+    flex-direction: column;
 }
 .linked-churches .linked-churches-item .item-image {
+    background-size: cover;
     height: 100px;
     max-width: 150px;
 }
@@ -4782,4 +4777,8 @@ section.provide .img-box .statistic-item-icon img{
     justify-content: space-between;
     font-size: 30px;
     margin-top: 20px;
+}
+
+.single-practice-areas-list.accordion ul.submenu li {
+    margin-left: 15px;
 }

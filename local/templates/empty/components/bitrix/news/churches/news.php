@@ -52,7 +52,7 @@ $this->setFrameMode(true);
 		"VIEW_MODE" => "LINE",
 		"COMPONENT_TEMPLATE" => "sidebar-section-list",
 		"TITLE" => "Благочиния",
-		"LINK" => "/"
+		"LINK" => ""
 	),
 	false
 );?>

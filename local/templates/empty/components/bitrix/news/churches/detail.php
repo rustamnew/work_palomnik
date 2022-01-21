@@ -47,6 +47,7 @@ $this->setFrameMode(true);
 						"SHOW_PARENT_NAME" => "N",	
 						"TOP_DEPTH" => "2",	
 						"VIEW_MODE" => "LINE",	
+						"TITLE" => "Благочиния",
 					),
 					false
 				);?>
