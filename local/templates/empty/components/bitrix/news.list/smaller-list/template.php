@@ -108,7 +108,7 @@ $this->setFrameMode(true);
                     $array_tags = array_slice($string_array, 0, $array_length);
                     ?>
                     <?foreach($array_tags as $item):?>
-                        <li><a href="/video/?tags=<?=$item;?>"><?=$item;?></a></li>
+                        <li><a><?=$item;?></a></li>
                     <?endforeach;?>	
                     </ul>
                 <?endif;?>

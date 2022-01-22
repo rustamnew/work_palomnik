@@ -62,6 +62,25 @@ $array_tags = array_slice($string_array, 0, $array_length);
 				<?endif;?>
 
 				<h5><?=$arResult["NAME"]?></h5>
+				
+				<?if($arResult["PROPERTIES"]["worktime"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["worktime"]["NAME"];?></h5>
+					<p><?=$arResult["PROPERTIES"]["worktime"]["VALUE"];?></p>
+				<?endif;?>
+
+				<?if($arResult["PROPERTIES"]["address"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["address"]["NAME"];?></h5>
+					<p><?=$arResult["PROPERTIES"]["address"]["VALUE"];?></p>
+				<?endif;?>
+
+				<?if($arResult["PROPERTIES"]["howtoget"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["howtoget"]["NAME"];?></h5>
+					<p><?=$arResult["PROPERTIES"]["howtoget"]["VALUE"];?></p>
+				<?endif;?>
+
 				<p><?=$arResult["DETAIL_TEXT"]?></p>
 
 				<?$resCode = CIBlock::GetByID($arResult["IBLOCK_ID"]);?>
@@ -106,6 +125,18 @@ $array_tags = array_slice($string_array, 0, $array_length);
 						</ul>
 					<?endif;?>
                 <?endif;?>
+
+				<?if($arResult["PROPERTIES"]["gallery"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["gallery"]["NAME"];?></h5>
+					<div class="gallery-church">
+						<?foreach($arResult["PROPERTIES"]["gallery"]["VALUE"] as $arItemGallery):?>
+							<a data-fancybox="church-gallery" href="<?echo CFile::GetPath($arItemGallery);?>">
+								<img src="<?echo CFile::GetPath($arItemGallery);?>" alt="test">
+							</a>
+						<?endforeach;?>
+					</div>
+				<?endif;?>
 				
 				<?if($arResult["PROPERTIES"]["show_map"]["VALUE"] == 'Y'):?>
 					<h5>Карта</h5>

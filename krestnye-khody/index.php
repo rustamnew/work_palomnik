@@ -190,7 +190,7 @@ $APPLICATION->SetTitle("Крестные ходы");
 						"SEF_URL_TEMPLATES" => array(
 							"news" => "",
 							"section" => "#SECTION_CODE#/",
-							"detail" => "#ELEMENT_CODE#/",
+							"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 						)
 					),
 					false

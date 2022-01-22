@@ -15,9 +15,27 @@ $this->setFrameMode(true);
 
 <ul class="calendar-list">
     <?foreach($arResult["ITEMS"] as $arItem):?>
+        <?
+        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+        ?>
+
         <li class="services-section-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<div class="item-content">
 				<h5><a href="#"><?echo ltrim(FormatDate("d F", MakeTimeStamp($arItem["PROPERTIES"]["date"]["VALUE"])), '0');?></a></h5>
+
+                <?if($arItem["IBLOCK_SECTION_ID"]):?>
+                    <ul class="tags-list">
+                        <li>
+                            <?$res = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID']);?>
+                            <?if($ar_res = $res->GetNext()):?>
+                                <a style="color: #fff;" href="<?=$ar_res["SECTION_PAGE_URL"]?>">
+                                    <?=$ar_res["NAME"]?>
+                                </a>
+                            <?endif;?>
+                        </li>
+                    </ul>
+                <?endif;?>
 
 				<p><?=$arItem["NAME"]?></p>
 
