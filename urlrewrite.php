@@ -1,6 +1,6 @@
 <?php
 $arUrlRewrite=array (
-  47 => 
+  52 => 
   array (
     'CONDITION' => '#^/krestnye-khody/#',
     'RULE' => '',

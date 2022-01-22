@@ -126,7 +126,7 @@ $dateFilter60days = Array(
         <?$APPLICATION->ShowPanel();?>
         <div class="page-wrapper">
         
-            <!-- :: Loading 
+            <!-- :: Loading -->
             <div class="loading">
                 <div class="loading-box">
                     <div class="sk-fading-circle">
@@ -144,7 +144,7 @@ $dateFilter60days = Array(
                         <div class="sk-circle12 sk-circle"></div>
                     </div>
                 </div>
-            </div>-->
+            </div>
 
             <!-- :: Navs -->
             <header class="navs">
