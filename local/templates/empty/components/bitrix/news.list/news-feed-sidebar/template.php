@@ -25,7 +25,7 @@ $this->setFrameMode(true);
 						<h6><?=$arItem["NAME"]?></h6>
 					</a>
 
-					<span><a href="#"><?echo FormatDateFromDB($arItem["DATE_CREATE"], 'SHORT');?></a></span>
+					<span><a href="#"><?echo FormatDateFromDB($arItem["PROPERTIES"]["date"]["VALUE"], 'SHORT');?></a></span>
 				</div>
 			</div>
 		<?endforeach;?>

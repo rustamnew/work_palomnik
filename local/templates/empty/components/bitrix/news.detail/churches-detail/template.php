@@ -132,7 +132,21 @@ $this->setFrameMode(true);
 									<li class="services-section-item">
 										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
 										<div class="item-content">
-										<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
+											<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
+
+											<?if($ar_res["TAGS"]):?>
+												<ul class="tags-list">
+												<?
+												$string = $ar_res["TAGS"];
+												$string_array = explode(', ', $string);
+												$array_tags = array_slice($string_array, 0, $array_length);
+												?>
+												<?foreach($array_tags as $item):?>
+													<li><a><?=$item;?></a></li>
+												<?endforeach;?>	
+												</ul>
+											<?endif;?>
+
 											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
 
 											<a href="<?=$ar_res["DETAIL_PAGE_URL"];?>" class="smaller-list_button-detail">Подробнее &gt;&gt;</a>

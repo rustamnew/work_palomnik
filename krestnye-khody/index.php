@@ -171,7 +171,7 @@ $APPLICATION->SetTitle("Крестные ходы");
 							1 => "",
 						),
 						"DETAIL_PROPERTY_CODE" => array(
-							0 => "",
+							0 => "gallery",
 							1 => "",
 						),
 						"DETAIL_DISPLAY_TOP_PAGER" => "N",

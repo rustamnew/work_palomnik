@@ -22,7 +22,9 @@ $this->setFrameMode(true);
 
         <li class="services-section-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 			<div class="item-content">
-				<h5><a href="#"><?echo ltrim(FormatDate("d F", MakeTimeStamp($arItem["PROPERTIES"]["date"]["VALUE"])), '0');?></a></h5>
+				<p class="calendar-list-prestol-date"><a href="#"><?echo ltrim(FormatDate("d F", MakeTimeStamp($arItem["PROPERTIES"]["date"]["VALUE"])), '0');?></a></p>
+
+                <h5><?=$arItem["NAME"]?></h5>
 
                 <?if($arItem["IBLOCK_SECTION_ID"]):?>
                     <ul class="tags-list">
@@ -37,9 +39,9 @@ $this->setFrameMode(true);
                     </ul>
                 <?endif;?>
 
-				<p><?=$arItem["NAME"]?></p>
 
-                <ul class="linked-churches">
+
+                
                     <?
                     $arSelectChurch = Array("ID", "NAME", "DETAIL_PAGE_URL", "PROPERTY_dates", "PROPERTY_address","PREVIEW_PICTURE");
                     $arFilterChurch = Array(
@@ -47,28 +49,25 @@ $this->setFrameMode(true);
                         "=PROPERTY_dates" => $arItem["ID"], 
                         "ACTIVE"=>"Y"
                     );
-                    $resChurch = CIBlockElement::GetList(Array("property_date"=>"ASC"), $arFilterChurch, false, Array("nPageSize"=>20), $arSelectChurch);
-                    while($obChurch = $resChurch->GetNextElement())
-                    {
-                        $arFieldsChurch = $obChurch->GetFields();?>
+                    $resChurch = CIBlockElement::GetList(Array("property_date"=>"ASC"), $arFilterChurch, false, Array("nPageSize"=>20), $arSelectChurch);?>
+                    <?if ($resChurch->SelectedRowsCount() != 0):?>
+                        <ul class="linked-churches">
+                            <?while($obChurch = $resChurch->GetNextElement())
+                            {
+                                $arFieldsChurch = $obChurch->GetFields();?>
 
-                        <li class="linked-churches-item">
-                            <div class="item-image" style="background-image: url(<?echo CFile::GetPath($arFieldsChurch["PREVIEW_PICTURE"]);?>)"></div>
+                                <li class="linked-churches-item">
+                                    <div class="item-image" style="background-image: url(<?echo CFile::GetPath($arFieldsChurch["PREVIEW_PICTURE"]);?>)"></div>
 
-                            <div class="item-content">
-                                <h6><a href="<?=$arFieldsChurch["DETAIL_PAGE_URL"]?>"><?=$arFieldsChurch["NAME"]?></a></h6>
-                                <p><?=$arFieldsChurch["PROPERTY_ADDRESS_VALUE"]?></p>
-                            </div>
-                        </li>
-                        <?//echo '<pre>';print_r($arFieldsChurch);echo '</pre>';?>
-                    <?}?>
-                </ul>
-
-                <p>
-                    <?$res = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID']);
-                    if($ar_res = $res->GetNext())
-                    echo $ar_res['NAME'];?>
-                </p>
+                                    <div class="item-content">
+                                        <h6><a href="<?=$arFieldsChurch["DETAIL_PAGE_URL"]?>"><?=$arFieldsChurch["NAME"]?></a></h6>
+                                        <p><?=$arFieldsChurch["PROPERTY_ADDRESS_VALUE"]?></p>
+                                    </div>
+                                </li>
+                                <?//echo '<pre>';print_r($arFieldsChurch);echo '</pre>';?>
+                            <?}?>
+                        </ul>
+                    <?endif;?>
 			</div>
 		</li>
     <?endforeach;?>	

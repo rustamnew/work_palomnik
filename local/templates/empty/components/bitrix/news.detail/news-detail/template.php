@@ -13,25 +13,6 @@
 $this->setFrameMode(true);
 ?>
 
-<?if($arResult["TAGS"]):?>
-	<?
-	$string = $arResult["TAGS"];
-	$string_array = explode(', ', $string);
-	$string_done = "";
-	$max_length = 30;
-
-	foreach($string_array as $item) {
-		if (iconv_strlen($string_done . $item) < 30) {
-			if ($string_done) {
-				$string_done .=", " . $item;
-			} else {
-				$string_done .= $item;
-			}
-		}
-	}
-	?>
-<?endif;?>
-
 <div class="row news-detail">
 	<div class="col-md-12">
 		<div class="blog-item">
@@ -39,11 +20,7 @@ $this->setFrameMode(true);
 				<a href="<?=$arResult["DETAIL_PAGE_URL"]?>" class="open-post">
 					<img class="img-fluid" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="01 Blog">
 				</a>
-				<?if($arResult["TAGS"]):?>
-					<ul>
-						<li><a><?=$string_done;?></a></li>
-					</ul>
-				<?endif;?>
+
 				<?if($arResult["IBLOCK"]["CODE"] == 'projects'):?>
 					<ul>
 						<li>
@@ -57,9 +34,32 @@ $this->setFrameMode(true);
 				<?endif;?>
 			</div>
 			<div class="text-box">
-				<span class="blog-date"><?echo FormatDateFromDB($arResult["DATE_CREATE"], 'SHORT');?></span>
+				<?if($arResult["TAGS"]):?>
+					<ul class="tags-list">
+					<?
+					$string = $arResult["TAGS"];
+					$string_array = explode(', ', $string);
+					$array_tags = array_slice($string_array, 0, $array_length);
+					?>
+					<?foreach($array_tags as $item):?>
+						<li><a href="/video/?tags=<?=$item;?>"><?=$item;?></a></li>
+					<?endforeach;?>	
+					</ul>
+				<?endif;?>
+				<span class="blog-date"><?echo FormatDateFromDB($arResult["PROPERTIES"]["date"]["VALUE"], 'SHORT');?></span>
 				<h5><?=$arResult["NAME"]?></h5>
 				<p><?=$arResult["DETAIL_TEXT"]?></p>
+				<?if($arResult["PROPERTIES"]["gallery"]["VALUE"]):?>
+					<br>
+					<h5><?=$arResult["PROPERTIES"]["gallery"]["NAME"];?></h5>
+					<div class="gallery-church">
+						<?foreach($arResult["PROPERTIES"]["gallery"]["VALUE"] as $arItemGallery):?>
+							<a data-fancybox="church-gallery" href="<?echo CFile::GetPath($arItemGallery);?>">
+								<img src="<?echo CFile::GetPath($arItemGallery);?>" alt="test">
+							</a>
+						<?endforeach;?>
+					</div>
+				<?endif;?>
 			</div>
 		</div>
 	</div>

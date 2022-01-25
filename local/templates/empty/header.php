@@ -49,6 +49,13 @@ $dateFilter60days = Array(
     "<=PROPERTY_date_new"=>ConvertDateTime($end_date, "YYYY-MM-DD"), 
     "ACTIVE"=>"Y",
 );
+
+
+
+global $hasPreview;
+$hasPreview = Array(
+    ">PREVIEW_PICTURE"=>"0",
+);
 ?>
 
 

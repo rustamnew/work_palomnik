@@ -42,10 +42,10 @@ $this->setFrameMode(true);
 					$string = $arItem["TAGS"];
 					$string_array = explode(', ', $string);
 					$string_done = "";
-					$max_length = 30;
+					$max_length = 50;
 
 					foreach($string_array as $item) {
-						if (iconv_strlen($string_done . $item) < 30) {
+						if (iconv_strlen($string_done . $item) < $max_length) {
 							if ($string_done) {
 								$string_done .=", " . $item;
 							} else {
@@ -81,7 +81,7 @@ $this->setFrameMode(true);
 							<?endif;?>
 						</div>
 						<div class="text-box">
-							<span class="blog-date"><?echo FormatDateFromDB($arItem["DATE_CREATE"], 'SHORT');?></span>
+							<span class="blog-date"><?echo FormatDateFromDB($arItem["PROPERTIES"]["date"]["VALUE"], 'SHORT');?></span>
 							<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="title-blog">
 								<h5><?=$arItem["NAME"]?></h5>
 							</a>
