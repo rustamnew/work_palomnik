@@ -919,13 +919,13 @@ header.navs.active{
     font-size: 18px;
     margin-bottom: 12px;
     color: #FFF;
+    margin-top: 20px;
 }
 .header .banner .handline{
     color: #FFF;
     line-height: 1.2;
     font-size: 50px;
     margin-bottom: 30px;
-    width: 130%;
 }
 .header .banner .about-website{
     font-size: 18px;
@@ -2322,7 +2322,7 @@ header.navs.active{
     color: #262B3E;
 }
 .blog-item .text-box{
-    padding: 30px 0px 0px 30px;
+    padding: 10px 0px 0px 10px;
 }
 .blog-item .text-box .title-blog{
     display: block;
@@ -4637,13 +4637,19 @@ section.provide .img-box .statistic-item-icon img{
 .tags-list {
     display: flex;
     flex-wrap: wrap;
+    list-style: none !important;
 }
-.tags-list li{
+.tags-list li {
     padding: 2px 15px;
     background-color: #C89D66;
     border-radius: 3px;
     margin-right: 8px;
     margin-bottom: 10px;
+
+}
+.news-detail .blog-item .text-box .tags-list li {
+    list-style: none;
+    margin-left: 0;
 }
 .tags-list li a{
     color: #fff;
@@ -4757,7 +4763,7 @@ section.provide .img-box .statistic-item-icon img{
     display: flex;
     flex-direction: column;
 }
-.linked-churches .linked-churches-item .item-image {
+.linked-churches .linked-churches-item .item-image.linked {
     background-size: cover;
     height: 100px;
     max-width: 150px;
@@ -4767,11 +4773,11 @@ section.provide .img-box .statistic-item-icon img{
     font-size: 20px;
 }
 
-
+/*
 .row-video .blog-item .text-box {
     padding: 10px 0px 0px 10px;
 }
-
+*/
 .sidebar-calendar-pagination {
     display: flex;
     justify-content: space-between;
@@ -4782,3 +4788,34 @@ section.provide .img-box .statistic-item-icon img{
 .single-practice-areas-list.accordion ul.submenu li {
     margin-left: 15px;
 }
+
+.linked-churches {
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.linked-churches a {
+    color: #262B3E;
+}
+
+.services-section-item .calendar-list-prestol-date {
+    margin-bottom: 10px;
+}
+.services-section-item .calendar-list-prestol-date a {
+    padding: 5px 10px;
+    border-radius: 16px;
+    background-color: #C89D66;
+    color: #fff;
+    font-weight: 500;
+}
+
+.novomucheniki .services-section-item .item-image {
+    height: 250px;
+    width: 30%;
+    background-size: contain;
+}
+
+

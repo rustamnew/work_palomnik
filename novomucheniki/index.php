@@ -3,44 +3,44 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("image", "/local/templates/empty/assets/images/banner_main/4.jpg");
 $APPLICATION->SetTitle("Новомученики");
 ?>
-<section class="bolg py-100">
+<section class="bolg py-100 novomucheniki">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">
 				<?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section.list", 
-	"sidebar-section-list", 
-	array(
-		"ADD_SECTIONS_CHAIN" => "Y",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"COUNT_ELEMENTS" => "N",
-		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
-		"FILTER_NAME" => "sectionsFilter",
-		"IBLOCK_ID" => "5",
-		"IBLOCK_TYPE" => "content",
-		"SECTION_CODE" => "",
-		"SECTION_FIELDS" => array(
-			0 => "",
-			1 => "",
-		),
-		"SECTION_ID" => $_REQUEST["SECTION_ID"],
-		"SECTION_URL" => "",
-		"SECTION_USER_FIELDS" => array(
-			0 => "",
-			1 => "",
-		),
-		"SHOW_PARENT_NAME" => "N",
-		"TOP_DEPTH" => "2",
-		"VIEW_MODE" => "LINE",
-		"TITLE" => "Благочиния",
-		"LINK" => "/",
-		"COMPONENT_TEMPLATE" => "sidebar-section-list"
-	),
-	false
-);?>
+					"bitrix:catalog.section.list", 
+					"sidebar-section-list", 
+					array(
+						"ADD_SECTIONS_CHAIN" => "Y",
+						"CACHE_FILTER" => "N",
+						"CACHE_GROUPS" => "Y",
+						"CACHE_TIME" => "36000000",
+						"CACHE_TYPE" => "A",
+						"COUNT_ELEMENTS" => "N",
+						"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+						"FILTER_NAME" => "sectionsFilter",
+						"IBLOCK_ID" => "5",
+						"IBLOCK_TYPE" => "content",
+						"SECTION_CODE" => "",
+						"SECTION_FIELDS" => array(
+							0 => "",
+							1 => "",
+						),
+						"SECTION_ID" => $_REQUEST["SECTION_ID"],
+						"SECTION_URL" => "",
+						"SECTION_USER_FIELDS" => array(
+							0 => "",
+							1 => "",
+						),
+						"SHOW_PARENT_NAME" => "N",
+						"TOP_DEPTH" => "2",
+						"VIEW_MODE" => "LINE",
+						"TITLE" => "Благочиния",
+						"LINK" => "/",
+						"COMPONENT_TEMPLATE" => "sidebar-section-list"
+					),
+					false
+				);?>
 				
 				<?$APPLICATION->IncludeComponent(
 					"bitrix:news.list", 
