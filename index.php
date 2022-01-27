@@ -7,11 +7,9 @@ $APPLICATION->SetTitle("Главная");
 	"bitrix:news.list", 
 	"churches-feed", 
 	array(
-		"COMPONENT_TEMPLATE" => "projects",
+		"COMPONENT_TEMPLATE" => "churches-feed",
 		"IBLOCK_TYPE" => "content",
-
 		"NEWS_COUNT" => "6",
-
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
 		"AJAX_MODE" => "N",
@@ -55,6 +53,21 @@ $APPLICATION->SetTitle("Главная");
 		"MESSAGE_404" => "",
 		"NAME" => "Храмы",
 		"TITLE" => "Наши храмы",
+		"IBLOCK_ID" => $_REQUEST["ID"],
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER2" => "ASC",
+		"FILTER_NAME" => "hasPreview",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SUBTITLE" => ""
 	),
 	false
 );?>
@@ -100,7 +113,7 @@ $APPLICATION->SetTitle("Главная");
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "8",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "date",
 			1 => "",
 		),
 		"DETAIL_URL" => "",

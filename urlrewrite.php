@@ -1,6 +1,6 @@
 <?php
 $arUrlRewrite=array (
-  52 => 
+  57 => 
   array (
     'CONDITION' => '#^/krestnye-khody/#',
     'RULE' => '',
@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/krestnye-khody/index.php',
     'SORT' => 100,
   ),
-  49 => 
+  63 => 
   array (
     'CONDITION' => '#^/novomucheniki/#',
     'RULE' => '',
@@ -16,15 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/novomucheniki/index.php',
     'SORT' => 100,
   ),
-  43 => 
-  array (
-    'CONDITION' => '#^/churches/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/churches/index.php',
-    'SORT' => 100,
-  ),
-  50 => 
+  59 => 
   array (
     'CONDITION' => '#^/svyatyni/#',
     'RULE' => '',
@@ -32,7 +24,15 @@ $arUrlRewrite=array (
     'PATH' => '/svyatyni/index.php',
     'SORT' => 100,
   ),
-  46 => 
+  62 => 
+  array (
+    'CONDITION' => '#^/churches/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/churches/index.php',
+    'SORT' => 100,
+  ),
+  53 => 
   array (
     'CONDITION' => '#^/prestol/#',
     'RULE' => '',
@@ -40,7 +40,7 @@ $arUrlRewrite=array (
     'PATH' => '/prestol/index.php',
     'SORT' => 100,
   ),
-  48 => 
+  56 => 
   array (
     'CONDITION' => '#^/kupeli/#',
     'RULE' => '',
@@ -48,7 +48,7 @@ $arUrlRewrite=array (
     'PATH' => '/kupeli/index.php',
     'SORT' => 100,
   ),
-  51 => 
+  60 => 
   array (
     'CONDITION' => '#^/graves/#',
     'RULE' => '',
@@ -72,7 +72,7 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/rest/index.php',
     'SORT' => 100,
   ),
-  37 => 
+  55 => 
   array (
     'CONDITION' => '#^/news/#',
     'RULE' => '',
