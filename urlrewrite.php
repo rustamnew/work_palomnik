@@ -16,20 +16,20 @@ $arUrlRewrite=array (
     'PATH' => '/novomucheniki/index.php',
     'SORT' => 100,
   ),
-  59 => 
-  array (
-    'CONDITION' => '#^/svyatyni/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/svyatyni/index.php',
-    'SORT' => 100,
-  ),
   62 => 
   array (
     'CONDITION' => '#^/churches/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/churches/index.php',
+    'SORT' => 100,
+  ),
+  64 => 
+  array (
+    'CONDITION' => '#^/svyatyni/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/svyatyni/index.php',
     'SORT' => 100,
   ),
   53 => 
@@ -48,7 +48,7 @@ $arUrlRewrite=array (
     'PATH' => '/kupeli/index.php',
     'SORT' => 100,
   ),
-  60 => 
+  65 => 
   array (
     'CONDITION' => '#^/graves/#',
     'RULE' => '',
