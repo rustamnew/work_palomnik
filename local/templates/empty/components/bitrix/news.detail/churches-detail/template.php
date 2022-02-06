@@ -24,6 +24,19 @@ $this->setFrameMode(true);
 				</div>
 			<?endif;?>
 			<div class="text-box">
+				<?if($arResult["IBLOCK_SECTION_ID"]):?>
+					<ul class="tags-list">
+						<li>
+							<?$res = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID']);?>
+							<?if($ar_res = $res->GetNext()):?>
+								<a style="color: #fff;" href="<?=$ar_res["SECTION_PAGE_URL"]?>">
+									<?=$ar_res["NAME"]?>
+								</a>
+							<?endif;?>
+						</li>
+					</ul>
+				<?endif;?>
+				
 				<h5><?=$arResult["NAME"]?></h5>
 				<p><?=$arResult["DETAIL_TEXT"]?></p>
 		
@@ -253,7 +266,7 @@ $this->setFrameMode(true);
 						</div>
 					<?endif;?>
 
-					<?if($arResult["PROPERTIES"]["dates"]["VALUE"]):?>
+					<?/*if($arResult["PROPERTIES"]["dates"]["VALUE"]):?>
 						<br>
 						<h5><?=$arResult["PROPERTIES"]["dates"]["NAME"];?></h5>
 						<div class="linked-items-list">
@@ -290,25 +303,9 @@ $this->setFrameMode(true);
 										</div>
 									</li>
 								<?}?>
-
-								<?/*
-								$res = CIBlockElement::GetByID($itemId);
-								if($ar_res = $res->GetNext()) {?>
-									<li class="services-section-item">
-										<?if($ar_res["PREVIEW_PICTURE"]):?><div class="item-image" style="background-image: url(<?echo CFile::GetPath($ar_res["PREVIEW_PICTURE"]);?>)"></div><?endif;?>
-										<div class="item-content">
-											<h5><a <?if($ar_res["DETAIL_TEXT"]):?>href="<?=$ar_res["DETAIL_PAGE_URL"];?>"<?endif;?>><?=$ar_res["NAME"];?></a></h5>
-											<p><?=$ar_res["PREVIEW_TEXT"];?></p>
-
-											<?if($ar_res["DETAIL_TEXT"]):?>
-												<a href="<?=$ar_res["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
-											<?endif;?>
-										</div>
-									</li>
-								<?}*/?>
 							<?endforeach;?>
 						</div>
-					<?endif;?>
+					<?endif;*/?>
 
 					<?if($arResult["PROPERTIES"]["gallery"]["VALUE"]):?>
 						<br>

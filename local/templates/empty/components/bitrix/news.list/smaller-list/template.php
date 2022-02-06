@@ -25,7 +25,7 @@ $this->setFrameMode(true);
             <?if($arItem["PREVIEW_PICTURE"]["SRC"]):?><div class="item-image" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>)"></div><?endif;?>
 
 			<div class="item-content">
-				<h5><a <?if($arItem["DETAIL_TEXT"]):?>href="<?=$arItem["DETAIL_PAGE_URL"]?>"<?endif;?>><?=$arItem["NAME"]?></a></h5>
+				<h5><a <?if($arItem["DETAIL_TEXT"] || $arItem["PROPERTIES"]["address"]["VALUE"] || $arItem["PROPERTIES"]["gallery"]["VALUE"]):?>href="<?=$arItem["DETAIL_PAGE_URL"]?>"<?endif;?>><?=$arItem["NAME"]?></a></h5>
 
                 <?if($arItem["IBLOCK_SECTION_ID"]):?>
                     <ul class="tags-list">
@@ -90,7 +90,7 @@ $this->setFrameMode(true);
                     </ul>
                 <?endif;?>
 
-                <?if($arItem["DETAIL_TEXT"]):?>
+                <?if($arItem["DETAIL_TEXT"] || $arItem["PROPERTIES"]["address"]["VALUE"] || $arItem["PROPERTIES"]["gallery"]["VALUE"]):?>
                     <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
                 <?endif;?>
 			</div>

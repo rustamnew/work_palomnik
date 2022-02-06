@@ -4759,20 +4759,6 @@ section.provide .img-box .statistic-item-icon img{
     font-weight: 500;
 }
 
-.linked-churches .linked-churches-item {
-    display: flex;
-    flex-direction: column;
-}
-.linked-churches .linked-churches-item .item-image.linked {
-    background-size: cover;
-    height: 100px;
-    max-width: 150px;
-}
-
-.linked-churches .linked-churches-item h6 {
-    font-size: 20px;
-}
-
 /*
 .row-video .blog-item .text-box {
     padding: 10px 0px 0px 10px;
@@ -4791,14 +4777,30 @@ section.provide .img-box .statistic-item-icon img{
 
 .linked-churches {
     padding: 10px;
-    background-color: antiquewhite;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+
 }
 
 .linked-churches a {
     color: #262B3E;
+}
+
+.linked-churches .linked-churches-item {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.linked-churches .linked-churches-item .item-image.linked {
+    background-size: cover;
+    height: 100px;
+    max-width: 150px;
+}
+
+.linked-churches .linked-churches-item h6 {
+    font-size: 20px;
 }
 
 .services-section-item .calendar-list-prestol-date {

@@ -155,8 +155,9 @@ $APPLICATION->SetTitle("Святые источники");
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "address",
+			1 => "howtoget",
+			2 => "gallery",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"DISPLAY_NAME" => "Y",
