@@ -330,47 +330,55 @@ $hasPreview = Array(
                             <?=$GLOBALS["global_info"]["header_extra_title_contacts"];?>
                         </h4>
 
-                        <div class="contact-box">
-                            <i class="flaticon-call"></i>
-                            <div class="box">
-                                <?if($GLOBALS['global_info']['contacts_phone1']):?>
-                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
-                                        <p><?=$GLOBALS['global_info']['contacts_phone1'];?></p>
-                                    </a>
-                                <?endif;?>
-                                <?if($GLOBALS['global_info']['contacts_phone2']):?>
-                                    <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
-                                        <p><?=$GLOBALS['global_info']['contacts_phone2'];?></p>
-                                    </a>
-                                <?endif;?>
+                        <?if($GLOBALS['global_info']['contacts_phone_show']):?>
+                            <div class="contact-box">
+                                <i class="flaticon-call"></i>
+                                <div class="box">
+                                    <?if($GLOBALS['global_info']['contacts_phone1']):?>
+                                        <a href="tel:<?=$GLOBALS['global_info']['contacts_phone1'];?>">
+                                            <p><?=$GLOBALS['global_info']['contacts_phone1'];?></p>
+                                        </a>
+                                    <?endif;?>
+                                    <?if($GLOBALS['global_info']['contacts_phone2']):?>
+                                        <a href="tel:<?=$GLOBALS['global_info']['contacts_phone2'];?>">
+                                            <p><?=$GLOBALS['global_info']['contacts_phone2'];?></p>
+                                        </a>
+                                    <?endif;?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-box">
-                            <i class="flaticon-email"></i>
-                            <div class="box">
-                                <?if($GLOBALS['global_info']['contacts_email1']):?>
-                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
-                                        <p><?=$GLOBALS['global_info']['contacts_email1'];?></p>
-                                    </a>
-                                <?endif;?>
-                                <?if($GLOBALS['global_info']['contacts_email2']):?>
-                                    <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
-                                        <p><?=$GLOBALS['global_info']['contacts_email2'];?></p>
-                                    </a>
-                                <?endif;?>
+                        <?endif;?>
+
+                        <?if($GLOBALS['global_info']['contacts_email_show']):?>
+                            <div class="contact-box">
+                                <i class="flaticon-email"></i>
+                                <div class="box">
+                                    <?if($GLOBALS['global_info']['contacts_email1']):?>
+                                        <a href="mailto:<?=$GLOBALS['global_info']['contacts_email1'];?>">
+                                            <p><?=$GLOBALS['global_info']['contacts_email1'];?></p>
+                                        </a>
+                                    <?endif;?>
+                                    <?if($GLOBALS['global_info']['contacts_email2']):?>
+                                        <a href="mailto:<?=$GLOBALS['global_info']['contacts_email2'];?>">
+                                            <p><?=$GLOBALS['global_info']['contacts_email2'];?></p>
+                                        </a>
+                                    <?endif;?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-box">
-                            <i class="flaticon-location"></i>
-                            <div class="box">
-                                <?if($GLOBALS['global_info']['contacts_address1']):?>
-                                    <p><?=$GLOBALS['global_info']['contacts_address1'];?></p>
-                                <?endif;?>
-                                <?if($GLOBALS['global_info']['contacts_address2']):?>
-                                    <p><?=$GLOBALS['global_info']['contacts_address2'];?></p>
-                                <?endif;?>
+                        <?endif;?>
+
+                        <?if($GLOBALS['global_info']['contacts_address_show']):?>
+                            <div class="contact-box">
+                                <i class="flaticon-location"></i>
+                                <div class="box">
+                                    <?if($GLOBALS['global_info']['contacts_address1']):?>
+                                        <p><?=$GLOBALS['global_info']['contacts_address1'];?></p>
+                                    <?endif;?>
+                                    <?if($GLOBALS['global_info']['contacts_address2']):?>
+                                        <p><?=$GLOBALS['global_info']['contacts_address2'];?></p>
+                                    <?endif;?>
+                                </div>
                             </div>
-                        </div>
+                        <?endif;?>
                     </div>
                     <div class="follow-us">
                         <h4>

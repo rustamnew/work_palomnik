@@ -71,7 +71,7 @@ $APPLICATION->SetTitle("Это интересно");
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_SHOW_ALL" => "N",
-		"PAGER_TEMPLATE" => "bootstrap_v4",
+		"PAGER_TEMPLATE" => "bootstrap_v4_modified",
 		"DISPLAY_TOP_PAGER" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"PAGER_TITLE" => "Новости",
