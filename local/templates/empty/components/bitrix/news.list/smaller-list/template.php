@@ -90,7 +90,7 @@ $this->setFrameMode(true);
                     </ul>
                 <?endif;?>
 
-                <?if($arItem["DETAIL_TEXT"] || $arItem["PROPERTIES"]["address"]["VALUE"] || $arItem["PROPERTIES"]["gallery"]["VALUE"]):?>
+                <?if($arItem["DETAIL_TEXT"] || $arItem["PROPERTIES"]["address"]["VALUE"] || $arItem["PROPERTIES"]["gallery"]["VALUE"] || $arItem["DETAIL_PICTURE"]["SRC"]):?>
                     <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="smaller-list_button-detail">Подробнее >></a>
                 <?endif;?>
 			</div>

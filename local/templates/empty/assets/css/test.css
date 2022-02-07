@@ -1,3 +1,25 @@
+.elemlist .blog-item .img-box {
+    width: 100%;
+}
 
+.owl-carousel .case-study-item .img-box {
+    width: 100%;
+}
 
+.col-md-6.col-lg-4 .blog-item .img-box {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .services-section-item {
+        flex-direction: column;
+    }
+    .services-section-item > .item-image {
+        margin-bottom: 20px;
+    }
+    .commission-section > .container > .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
 
