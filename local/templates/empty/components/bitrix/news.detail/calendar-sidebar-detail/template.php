@@ -52,13 +52,22 @@ $arLink['NEXT'] = isset($arNavi[$iCurPos+1]) ? $arNavi[$iCurPos+1] : '';
    }?>
 </div>
 
-<div class="">По новому стилю <?=$arResult["PROPERTIES"]["date_new"]["VALUE"];?></div>
-<div class="">По старому стилю <?=$arResult["PROPERTIES"]["date_old"]["VALUE"];?></div>
+<div class="sidebar-calendar-date-title">По новому стилю <?=$arResult["PROPERTIES"]["date_new"]["VALUE"];?></div>
+<div class="sidebar-calendar-date-title">По старому стилю <?=$arResult["PROPERTIES"]["date_old"]["VALUE"];?></div>
+
+<?if ($arResult["PREVIEW_PICTURE"]["SRC"]):?>
+<div class="sidebar-calendar-image">
+   <img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" alt="preview">
+</div>
+<?endif;?>
+
+
 <div class="">
-   <?if($arResult["PREVIEW_TEXT"]):?>
+   <?/*if($arResult["PREVIEW_TEXT"]):?>
       <?=mb_substr($arResult["PREVIEW_TEXT"], 0, 500 ).'...'?>
-   <?endif;?>
+   <?endif;*/?>
+   <?=$arResult["PREVIEW_TEXT"]?>
 </div>
 
-<a href="/calendar/?ELEMENT_ID=<?=$arResult["ID"]?>">Подробнее</a>
+<?/*<a href="/calendar/?ELEMENT_ID=<?=$arResult["ID"]?>">Подробнее</a>*/?>
 </div>

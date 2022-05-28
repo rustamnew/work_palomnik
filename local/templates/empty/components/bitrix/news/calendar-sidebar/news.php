@@ -37,10 +37,7 @@ if ($ob = $res->Fetch()):?>
 		"ELEMENT_ID" => $id,
 		"ELEMENT_CODE" => "",
 		"CHECK_DATES" => "Y",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FIELD_CODE" => $arParams["DETAIL_FIELD_CODE"],
 		"PROPERTY_CODE" => array(
 			0 => "date_new",
 			1 => "date_old",

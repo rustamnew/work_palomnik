@@ -4826,4 +4826,10 @@ section.provide .img-box .statistic-item-icon img{
     background-size: contain;
 }
 
+.sidebar-calendar-image {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
 
